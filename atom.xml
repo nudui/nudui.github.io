@@ -92,43 +92,6 @@
   </entry>
   
   <entry>
-    <title>文档在线预览方案</title>
-    <link href="http://nudui.github.io/2016/10/05/%E6%96%87%E6%A1%A3%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88%E6%96%B9%E6%A1%88/"/>
-    <id>http://nudui.github.io/2016/10/05/文档在线预览方案/</id>
-    <published>2016-10-05T02:33:49.000Z</published>
-    <updated>2016-11-16T09:23:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>如word文档在线预览，转换为html进行展示。</p>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="1，poi"><a href="#1，poi" class="headerlink" title="1，poi"></a>1，poi</h3><pre><code>不到万不得已不建议使用，很难转换完美。
-</code></pre><h3 id="2，七牛"><a href="#2，七牛" class="headerlink" title="2，七牛"></a>2，七牛</h3><pre><code>（1）七牛第三方文档转换服务，收费，但不高，api不易懂。
-
-（2）七牛自带转换服务。参考http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接  ?odconv/pdf  
- 缺点：此api在七牛官网无入口，可能是七牛即将弃用的服务，毕竟有了收费的第三方文档服务。
-</code></pre><h3 id="3，某些专做文档服务的服务商"><a href="#3，某些专做文档服务的服务商" class="headerlink" title="3，某些专做文档服务的服务商"></a>3，某些专做文档服务的服务商</h3><pre><code>譬如idocv，其为了销售开放了试用接口http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。
-缺点：1，数据（文档）安全性。   
-     2，如过多调用，会引起对方警觉，可能屏蔽ip。
-</code></pre><h3 id="4，其他网上方案："><a href="#4，其他网上方案：" class="headerlink" title="4，其他网上方案："></a>4，其他网上方案：</h3><blockquote>
-<p>activexobject，此js对象仅支持ie浏览器，且需要用户在浏览器上设置诸多选项。</p>
-<p>百度文库。百度要求文档必须上传到文库。</p>
-<p>其他方案已忘记，要么是系统局限，要么是操作繁琐，总之弃用。</p>
-</blockquote>
-<h3 id="5，根据2、3得到的html，可通过iframe进行展示。"><a href="#5，根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="5，根据2、3得到的html，可通过iframe进行展示。"></a>5，根据2、3得到的html，可通过iframe进行展示。</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h2&gt;&lt;p&gt;如word文档在线预览，转换为html进行展示。&lt;/p&gt;
-&lt;h2 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerli
-    
-    </summary>
-    
-      <category term="方案" scheme="http://nudui.github.io/categories/%E6%96%B9%E6%A1%88/"/>
-    
-    
-      <category term="word在线预览" scheme="http://nudui.github.io/tags/word%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
-    
-  </entry>
-  
-  <entry>
     <title>tomcat加载两次spring</title>
     <link href="http://nudui.github.io/2016/07/16/tomcat%E5%8A%A0%E8%BD%BD%E4%B8%A4%E6%AC%A1spring/"/>
     <id>http://nudui.github.io/2016/07/16/tomcat加载两次spring/</id>
@@ -176,81 +139,6 @@
   </entry>
   
   <entry>
-    <title>api接口规则</title>
-    <link href="http://nudui.github.io/2016/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
-    <id>http://nudui.github.io/2016/05/16/api接口规则/</id>
-    <published>2016-05-16T08:07:48.000Z</published>
-    <updated>2016-11-16T09:24:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1，在header中加入参数"><a href="#1，在header中加入参数" class="headerlink" title="1，在header中加入参数"></a>1，在header中加入参数</h3><pre><code>&quot;info&quot; : {
-      &quot;appnm&quot; : &quot;XXX&quot;, （app name）
-      &quot;appVer&quot; : &quot;1.0.0&quot;,    （app版本）
-      &quot;clientType&quot; : &quot;ios&quot;,   （系统类型）
-      &quot;os&quot; : &quot;iPhone OS 10.0.3&quot;,（系统版本）
-      &quot;model&quot; : &quot;iPhone Simulator&quot;,（手机型号）
-      &quot;screen&quot; : &quot;320x568&quot;,（屏幕分辨）
-      &quot;channel&quot; : &quot;app_store&quot;,
-      &quot;did&quot; : &quot;E96B0235-F60C-49F4-B2F9-F1B1041C7E51&quot;（设备号）
-}
-&quot;auth&quot; : {
-      &quot;auth&quot;: &quot;audbbiuf7q74asdh8fa0s9dqjashdugfasd&quot;, （用户唯一标识，如有则认为已登录）
-      &quot;sign&quot;: &quot;fad22321acbd122121&quot;,  （签名）
-      &quot;ts&quot; : &quot;1231231283213&quot;（时间戳）
-      &quot;rand&quot; : &quot;12121212&quot;（一个随机数）
- }    
-</code></pre><h3 id="2，url签名算法："><a href="#2，url签名算法：" class="headerlink" title="2，url签名算法："></a>2，url签名算法：</h3><pre><code>1，sign = MD5 ( url + ts + &quot;自定义一个key&quot; )
-2，url：去除域名部分，例如  http://api.xxx.com/aaa/bbb/ccc?p=1      ===&gt;    /aaa/bbb/ccc?p=1  
-3，服务端每次请求必须校验sign 
-</code></pre><h3 id="3，备注："><a href="#3，备注：" class="headerlink" title="3，备注："></a>3，备注：</h3><pre><code>1，在与服务端交互的每个请求，header均须加上1中参数。
-2，接口服务端返回为json类型，且json中数据类型全部为string。
-3，请求参数使用【下划线】类型 ， 数据返回使用【驼峰】，URL使用【下划线】
-4，如果sign不正确，服务端不处理该请求
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1，在header中加入参数&quot;&gt;&lt;a href=&quot;#1，在header中加入参数&quot; class=&quot;headerlink&quot; title=&quot;1，在header中加入参数&quot;&gt;&lt;/a&gt;1，在header中加入参数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;quot;info&amp;quo
-    
-    </summary>
-    
-      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
-    
-    
-      <category term="api app 接口规则" scheme="http://nudui.github.io/tags/api-app-%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>app登录注册方案</title>
-    <link href="http://nudui.github.io/2016/05/16/app%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%96%B9%E6%A1%88/"/>
-    <id>http://nudui.github.io/2016/05/16/app登录注册方案/</id>
-    <published>2016-05-16T08:04:45.000Z</published>
-    <updated>2016-11-16T09:24:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="与web开发不同点"><a href="#与web开发不同点" class="headerlink" title="与web开发不同点"></a>与web开发不同点</h3><pre><code>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能（或不方便、不能自定义内容），开发者需要进行面向app的模拟session实现。
-</code></pre><h3 id="借助工具"><a href="#借助工具" class="headerlink" title="借助工具"></a>借助工具</h3><pre><code>memcached\redis或其他进程外缓存。
-</code></pre><p>###实现过程<br>    1，在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。<br>    2，注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。<br>    3，登录时：<br>            1，user表中查找成功。<br>            2，服务端从db中获取auth，放入缓存中。<br>            3，将auth返回给移动端。<br>    4，移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre><code>1，web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。
-2，在缓存中，auth要设有效时长。
-3，缓存中的数据结构为  auth:userid(mobile)。
-4，当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。
-5，web开发也可类似上述方案进行开发，不使用httpsession，原因不述。
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;与web开发不同点&quot;&gt;&lt;a href=&quot;#与web开发不同点&quot; class=&quot;headerlink&quot; title=&quot;与web开发不同点&quot;&gt;&lt;/a&gt;与web开发不同点&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;web中有浏览器角色，保持用户登录状态可以根据cookie、sess
-    
-    </summary>
-    
-      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
-    
-    
-      <category term="app auth" scheme="http://nudui.github.io/tags/app-auth/"/>
-    
-  </entry>
-  
-  <entry>
     <title>邮箱消息嵌入到web系统</title>
     <link href="http://nudui.github.io/2015/10/10/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF%E5%B5%8C%E5%85%A5%E5%88%B0web%E7%B3%BB%E7%BB%9F/"/>
     <id>http://nudui.github.io/2015/10/10/邮箱消息嵌入到web系统/</id>
@@ -292,6 +180,43 @@
   </entry>
   
   <entry>
+    <title>文档在线预览方案</title>
+    <link href="http://nudui.github.io/2015/10/05/%E6%96%87%E6%A1%A3%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88%E6%96%B9%E6%A1%88/"/>
+    <id>http://nudui.github.io/2015/10/05/文档在线预览方案/</id>
+    <published>2015-10-05T02:33:49.000Z</published>
+    <updated>2016-11-16T09:26:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>如word文档在线预览，转换为html进行展示。</p>
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="1，poi"><a href="#1，poi" class="headerlink" title="1，poi"></a>1，poi</h3><pre><code>不到万不得已不建议使用，很难转换完美。
+</code></pre><h3 id="2，七牛"><a href="#2，七牛" class="headerlink" title="2，七牛"></a>2，七牛</h3><pre><code>（1）七牛第三方文档转换服务，收费，但不高，api不易懂。
+
+（2）七牛自带转换服务。参考http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接  ?odconv/pdf  
+ 缺点：此api在七牛官网无入口，可能是七牛即将弃用的服务，毕竟有了收费的第三方文档服务。
+</code></pre><h3 id="3，某些专做文档服务的服务商"><a href="#3，某些专做文档服务的服务商" class="headerlink" title="3，某些专做文档服务的服务商"></a>3，某些专做文档服务的服务商</h3><pre><code>譬如idocv，其为了销售开放了试用接口http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。
+缺点：1，数据（文档）安全性。   
+     2，如过多调用，会引起对方警觉，可能屏蔽ip。
+</code></pre><h3 id="4，其他网上方案："><a href="#4，其他网上方案：" class="headerlink" title="4，其他网上方案："></a>4，其他网上方案：</h3><blockquote>
+<p>activexobject，此js对象仅支持ie浏览器，且需要用户在浏览器上设置诸多选项。</p>
+<p>百度文库。百度要求文档必须上传到文库。</p>
+<p>其他方案已忘记，要么是系统局限，要么是操作繁琐，总之弃用。</p>
+</blockquote>
+<h3 id="5，根据2、3得到的html，可通过iframe进行展示。"><a href="#5，根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="5，根据2、3得到的html，可通过iframe进行展示。"></a>5，根据2、3得到的html，可通过iframe进行展示。</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h2&gt;&lt;p&gt;如word文档在线预览，转换为html进行展示。&lt;/p&gt;
+&lt;h2 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="方案" scheme="http://nudui.github.io/categories/%E6%96%B9%E6%A1%88/"/>
+    
+    
+      <category term="word在线预览" scheme="http://nudui.github.io/tags/word%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>人才短租模式思考</title>
     <link href="http://nudui.github.io/2015/09/24/%E4%BA%BA%E6%89%8D%E7%9F%AD%E7%A7%9F%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83/"/>
     <id>http://nudui.github.io/2015/09/24/人才短租模式思考/</id>
@@ -322,6 +247,81 @@
     
     
       <category term="思考" scheme="http://nudui.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>api接口规则</title>
+    <link href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    <id>http://nudui.github.io/2015/05/16/api接口规则/</id>
+    <published>2015-05-16T08:07:48.000Z</published>
+    <updated>2016-11-16T09:26:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1，在header中加入参数"><a href="#1，在header中加入参数" class="headerlink" title="1，在header中加入参数"></a>1，在header中加入参数</h3><pre><code>&quot;info&quot; : {
+      &quot;appnm&quot; : &quot;XXX&quot;, （app name）
+      &quot;appVer&quot; : &quot;1.0.0&quot;,    （app版本）
+      &quot;clientType&quot; : &quot;ios&quot;,   （系统类型）
+      &quot;os&quot; : &quot;iPhone OS 10.0.3&quot;,（系统版本）
+      &quot;model&quot; : &quot;iPhone Simulator&quot;,（手机型号）
+      &quot;screen&quot; : &quot;320x568&quot;,（屏幕分辨）
+      &quot;channel&quot; : &quot;app_store&quot;,
+      &quot;did&quot; : &quot;E96B0235-F60C-49F4-B2F9-F1B1041C7E51&quot;（设备号）
+}
+&quot;auth&quot; : {
+      &quot;auth&quot;: &quot;audbbiuf7q74asdh8fa0s9dqjashdugfasd&quot;, （用户唯一标识，如有则认为已登录）
+      &quot;sign&quot;: &quot;fad22321acbd122121&quot;,  （签名）
+      &quot;ts&quot; : &quot;1231231283213&quot;（时间戳）
+      &quot;rand&quot; : &quot;12121212&quot;（一个随机数）
+ }    
+</code></pre><h3 id="2，url签名算法："><a href="#2，url签名算法：" class="headerlink" title="2，url签名算法："></a>2，url签名算法：</h3><pre><code>1，sign = MD5 ( url + ts + &quot;自定义一个key&quot; )
+2，url：去除域名部分，例如  http://api.xxx.com/aaa/bbb/ccc?p=1      ===&gt;    /aaa/bbb/ccc?p=1  
+3，服务端每次请求必须校验sign 
+</code></pre><h3 id="3，备注："><a href="#3，备注：" class="headerlink" title="3，备注："></a>3，备注：</h3><pre><code>1，在与服务端交互的每个请求，header均须加上1中参数。
+2，接口服务端返回为json类型，且json中数据类型全部为string。
+3，请求参数使用【下划线】类型 ， 数据返回使用【驼峰】，URL使用【下划线】
+4，如果sign不正确，服务端不处理该请求
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1，在header中加入参数&quot;&gt;&lt;a href=&quot;#1，在header中加入参数&quot; class=&quot;headerlink&quot; title=&quot;1，在header中加入参数&quot;&gt;&lt;/a&gt;1，在header中加入参数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;quot;info&amp;quo
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="api app 接口规则" scheme="http://nudui.github.io/tags/api-app-%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>app登录注册方案</title>
+    <link href="http://nudui.github.io/2015/05/16/app%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%96%B9%E6%A1%88/"/>
+    <id>http://nudui.github.io/2015/05/16/app登录注册方案/</id>
+    <published>2015-05-16T08:04:45.000Z</published>
+    <updated>2016-11-16T09:26:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="与web开发不同点"><a href="#与web开发不同点" class="headerlink" title="与web开发不同点"></a>与web开发不同点</h3><pre><code>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能（或不方便、不能自定义内容），开发者需要进行面向app的模拟session实现。
+</code></pre><h3 id="借助工具"><a href="#借助工具" class="headerlink" title="借助工具"></a>借助工具</h3><pre><code>memcached\redis或其他进程外缓存。
+</code></pre><p>###实现过程<br>    1，在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。<br>    2，注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。<br>    3，登录时：<br>            1，user表中查找成功。<br>            2，服务端从db中获取auth，放入缓存中。<br>            3，将auth返回给移动端。<br>    4，移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre><code>1，web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。
+2，在缓存中，auth要设有效时长。
+3，缓存中的数据结构为  auth:userid(mobile)。
+4，当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。
+5，web开发也可类似上述方案进行开发，不使用httpsession，原因不述。
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;与web开发不同点&quot;&gt;&lt;a href=&quot;#与web开发不同点&quot; class=&quot;headerlink&quot; title=&quot;与web开发不同点&quot;&gt;&lt;/a&gt;与web开发不同点&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;web中有浏览器角色，保持用户登录状态可以根据cookie、sess
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="app auth" scheme="http://nudui.github.io/tags/app-auth/"/>
     
   </entry>
   
