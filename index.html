@@ -218,10 +218,10 @@
         
           <span itemprop="articleBody">
             
-              <p>###与web开发不同点<br>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能，开发者需要进行面向app的模拟session实现。</p>
-<p>###借助工具：<br>memcached\redis或其他进程外缓存。</p>
-<p>###实现过程<br>1，在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。<br>2，注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。<br>3，登录时：<br>1，user表中查找成功。<br>2，服务端从db中获取auth，放入缓存中。<br>3，将auth返回给移动端。<br>4，移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</p>
-<p>###注<br>1，web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。<br>2，在缓存中，auth要设有效时长。<br>3，缓存中的数据结构为  auth:userid(mobile)。<br>4，当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。<br>5，web开发也可类似上述方案进行开发，不使用httpsession，原因不述。</p>
+              <p>##与web开发不同点<br>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能，开发者需要进行面向app的模拟session实现。</p>
+<p>##借助工具：<br>memcached\redis或其他进程外缓存。</p>
+<p>##实现过程<br>1，在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。<br>2，注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。<br>3，登录时：<br>1，user表中查找成功。<br>2，服务端从db中获取auth，放入缓存中。<br>3，将auth返回给移动端。<br>4，移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</p>
+<p>##注<br>1，web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。<br>2，在缓存中，auth要设有效时长。<br>3，缓存中的数据结构为  auth:userid(mobile)。<br>4，当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。<br>5，web开发也可类似上述方案进行开发，不使用httpsession，原因不述。</p>
 
             
           </span>
