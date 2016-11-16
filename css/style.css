@@ -215,8 +215,6 @@ div {
     .post .disqus-comment-count:hover {
       color: #444; }
   .post .post-content {
-    max-height: 134px;
-    overflow: hidden;
     clear: left;
     font-size: 15px;
     line-height: 1.77;
