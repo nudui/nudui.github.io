@@ -181,7 +181,7 @@
               
                 
                 <a class="post-title-link" href="/2016/11/16/app服务端登录接口/" itemprop="url">
-                  app服务端登录接口
+                  Unbenannt
                 </a>
               
             
@@ -218,19 +218,33 @@
         
           <span itemprop="articleBody">
             
-              <p>#命名<br>Go语言强制了编码风格。<br>1，任何需要<strong>对外暴露</strong>的名字必须以<strong>大写字母</strong>开头，不需要对外暴露的则应该以<strong>小写 字母</strong>开头。<br>2，Go语言明确宣告了拥护骆驼命名法而排斥下划线法。<br>3，”{}”，左括号禁止单开一行。<br>4，gotool中包含了一个代码格式化的功能。命令：go fmt hello.go，自动格式化。</p>
-<p>#布尔类型<br>略过</p>
-<p>#基本数据类型<br>| 类型         | 取值         |<br>| ————- |:————-:|<br>| int8   | -128~127   |<br>| int16   | -32768~32767   |<br>| int32   | -2147483648~2147483647  |<br>| int64   | -9223372036854775808~9223372036854775807   |<br>| uint…   | 非负数，与上述对应 uint8:0~255   |<br>| float32   | +- 1e-45 -&gt; +- 3.4 <em> 1e38  |<br>| float64   | +- 5 </em> 1e-324 -&gt; 107 * 1e308  | </p>
-<p>#变量<br>局部变量不允许只声明不使用！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//正确的声明</div><div class="line">var x int</div><div class="line">var x int = 3</div><div class="line">var x = 3</div><div class="line">var&#123;</div><div class="line">x = 3</div><div class="line">y = 4</div><div class="line">&#125;</div><div class="line">x := 3  //仅限于在函数中。</div><div class="line">x , y := 3 , 4</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func x() &#123;</div><div class="line">var x = 3</div><div class="line">x := 3  //错误，:=用于声明 + 赋值 ，x已经声明过了，不能再次声明 ， 只能赋值。</div><div class="line">x , y := 1 , 4 //正确 ， y为新变量，此时:=对于x降级为赋值。必须有至少一个新的变量方可。</div><div class="line">&#125;</div><div class="line">退化赋值的前提条件：至少有一个新的变量被定义，且必须是同一作用域。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var x = 3</div><div class="line">func x()&#123;</div><div class="line">x := 4 //正确，此时的x与函数外的x作用域不同，相当于一个新的变量。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>#多变量<br>在进行多变量赋值时，先计算右侧的所有值，然后完成赋值操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">a , b := 1 , 2</div><div class="line">a , b = a + 1 : b + 1</div><div class="line">fmt.Println(a , b) //结果：2 ，3</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func exchange(a , b int) (int,int)&#123;</div><div class="line">a , b = b , a</div><div class="line">return a , b</div><div class="line">&#125;</div><div class="line">func main()&#123;</div><div class="line">//只想使用b</div><div class="line">_ , b = exchange(1 , 2)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>#常量<br>运行时恒定不变的，编译期间能确定值！<br>可在函数内定义，允许只定义不使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">显式类型定义： const b string = &quot;abc&quot;</div><div class="line">隐式类型定义： const b = &quot;abc&quot;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">正确的做法：const c1 = 2/3</div><div class="line">错误的做法：const c2 = getNumber() // 引发构建错误: getNumber() used as value</div></pre></td></tr></table></figure>
-<p>#字符类型<br>严格来说这并非go语言的一个类型，字符只是证书的特殊用例。byte 类型是 uint8 的别名，对于只占用 1 个字节的传统 ASCII 编码的字符来说，完全没有问题。<br>例如：<code>var ch byte = &#39;A&#39;；</code>字符使用单引号括起来。<br>在 ASCII 码表中，A 的值是 65，而使用 16 进制表示则为 41，所以下面的写法是等效的：<br>包 unicode 包含了一些针对测试字符的非常有用的函数（其中 ch 代表字符）：</p>
-<p>判断是否为字母：unicode.IsLetter(ch)<br>判断是否为数字：unicode.IsDigit(ch)<br>判断是否为空白符号：unicode.IsSpace(ch)<br>这些函数返回一个布尔值。</p>
-<p>字符串<br>字符串是UTF-8的一个序列（当字符为ASCII码时占一个字节，其他字符需要2-4个字节）。</p>
+              <h1 id="《Go入门指南》"><a href="#《Go入门指南》" class="headerlink" title="《Go入门指南》"></a>《Go入门指南》</h1><p>在接触 Go 语言之后，对这门编程语言非常着迷，期间也陆陆续续开始一些帮助国内编程爱好者了解和发展 Go 语言的工作，比如开始录制视频教程<a href="https://github.com/Unknwon/go-fundamental-programming" target="_blank" rel="external">《Go编程基础》</a>。但由于目前国内并没有比较好的 Go 语言书籍，而国外的优秀书籍因为英文的缘故在一定程度上也为不少 Go 语言爱好者带来了一些学习上的困扰，不仅为了加快扩散 Go 爱好者的国内群体，本人在完成阅读这本名叫 《The Way to Go》 之后，决定每天抽出一点时间来进行翻译的工作，并且以开源的形式免费分享给有需要的 Go 语言爱好者。</p>
+<p>尽管该书对目前 Go 语言版本来说有小部分内容相对过时，但是为当下不可多得的好书，相关内容已获得作者同意根据当前 Go 语言版本进行修改而不作出特别声明。</p>
+<p>该翻译版本已获得原作者（Ivo Balbaert）本人授权，并表示支持开源事业的发展！</p>
+<h2 id="翻译进度"><a href="#翻译进度" class="headerlink" title="翻译进度"></a>翻译进度</h2><p>14.6 <a href="eBook/14.6.md">协程和恢复（recover）</a></p>
+<h2 id="支持本书"><a href="#支持本书" class="headerlink" title="支持本书"></a>支持本书</h2><p>如果你喜欢本书 《Go入门指南》，你可以参与到本书的翻译或纠正工作中来，具体请联系【无闻 E-mail：u#gogs.io】，一同完善本书并帮助壮大 Go 语言在国内的学习群体，给大家提供更好的学习资源。</p>
+<h2 id="交流社区"><a href="#交流社区" class="headerlink" title="交流社区"></a>交流社区</h2><p>参见 <a href="https://github.com/Unknwon/go-study-index" target="_blank" rel="external">Go 语言学习资料与社区索引</a>。</p>
+<h3 id="新人守则"><a href="#新人守则" class="headerlink" title="新人守则"></a>新人守则</h3><ul>
+<li>2012 年 3 月 28 日以前的博文中的内容基本过时，不要再看</li>
+<li>符合等式 <strong><em>百度+思考+失败+翻墙+谷歌+尝试=解决</em></strong> 的问题最好不要发问</li>
+</ul>
+<h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><ul>
+<li>本书原作者：Ivo Balbaert</li>
+<li>参与翻译人员：</li>
+<li><a href="https://github.com/zhanming" target="_blank" rel="external">@zhanming</a></li>
+<li>themorecolor</li>
+<li><a href="https://github.com/everyx" target="_blank" rel="external">@everyx</a></li>
+<li><a href="https://github.com/chidouhu" target="_blank" rel="external">@chidouhu</a></li>
+<li><a href="https://github.com/spawnris" target="_blank" rel="external">@spawnris</a></li>
+<li><a href="https://github.com/domainname" target="_blank" rel="external">@domainname</a></li>
+<li><a href="https://github.com/leisore" target="_blank" rel="external">@leisore</a></li>
+<li><a href="https://github.com/dake" target="_blank" rel="external">@dake</a></li>
+<li><a href="https://github.com/glight2000" target="_blank" rel="external">@glight2000</a></li>
+<li><a href="https://github.com/songleo" target="_blank" rel="external">@songleo</a></li>
+</ul>
+<h2 id="授权许可"><a href="#授权许可" class="headerlink" title="授权许可"></a>授权许可</h2><p>除特别声明外，本书中的内容使用 <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="external">CC BY-SA 3.0 License</a>（创作共用 署名-相同方式共享3.0 许可协议）授权，代码遵循 <a href="https://github.com/astaxie/build-web-application-with-golang/blob/master/LICENSE.md" target="_blank" rel="external">BSD 3-Clause License</a>（3 项条款的 BSD 许可协议）。</p>
+<h2 id="开始阅读"><a href="#开始阅读" class="headerlink" title="开始阅读"></a>开始阅读</h2><p><a href="./eBook/preface.md">前言</a></p>
+<p>想读书的人，不会找不到 <a href="eBook/directory.md">目录</a> :)</p>
 
             
           </span>
