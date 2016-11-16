@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>受命于天</title>
-  
+  <subtitle>既寿永昌- java、golang</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-16T09:24:44.000Z</updated>
+  <updated>2016-11-16T09:54:39.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://nudui.github.io/2016/11/16/golang%E7%AC%94%E8%AE%B0-1-%E7%B1%BB%E5%9E%8B/"/>
     <id>http://nudui.github.io/2016/11/16/golang笔记-1-类型/</id>
     <published>2016-11-16T07:06:29.000Z</published>
-    <updated>2016-11-16T09:24:44.000Z</updated>
+    <updated>2016-11-16T09:54:39.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="golang笔记-1-类型"><a href="#golang笔记-1-类型" class="headerlink" title="golang笔记-1-类型"></a>golang笔记-1-类型</h1><h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>Go语言强制了编码风格。<br>1，任何需要<strong>对外暴露</strong>的名字必须以<strong>大写字母</strong>开头，不需要对外暴露的则应该以<strong>小写 字母</strong>开头。<br>2，Go语言明确宣告了拥护骆驼命名法而排斥下划线法。<br>3，”{}”，左括号禁止单开一行。<br>4，gotool中包含了一个代码格式化的功能。命令：go fmt hello.go，自动格式化。</p>
+    <content type="html"><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>Go语言强制了编码风格。<br>1，任何需要<strong>对外暴露</strong>的名字必须以<strong>大写字母</strong>开头，不需要对外暴露的则应该以<strong>小写 字母</strong>开头。<br>2，Go语言明确宣告了拥护骆驼命名法而排斥下划线法。<br>3，”{}”，左括号禁止单开一行。<br>4，gotool中包含了一个代码格式化的功能。命令：go fmt hello.go，自动格式化。</p>
 <h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><pre><code>略过
 </code></pre><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><table>
 <thead>
@@ -80,7 +80,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;golang笔记-1-类型&quot;&gt;&lt;a href=&quot;#golang笔记-1-类型&quot; class=&quot;headerlink&quot; title=&quot;golang笔记-1-类型&quot;&gt;&lt;/a&gt;golang笔记-1-类型&lt;/h1&gt;&lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; cla
+      &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;p&gt;Go语言强制了编码风格。&lt;br&gt;1，任何需要&lt;strong&gt;对外暴露&lt;/strong&gt;的名字必须以&lt;strong&gt;大写字母&lt;/strong&gt;
     
     </summary>
     
@@ -96,7 +96,7 @@
     <link href="http://nudui.github.io/2016/07/16/tomcat%E5%8A%A0%E8%BD%BD%E4%B8%A4%E6%AC%A1spring/"/>
     <id>http://nudui.github.io/2016/07/16/tomcat加载两次spring/</id>
     <published>2016-07-16T07:57:16.000Z</published>
-    <updated>2016-11-16T09:25:04.000Z</updated>
+    <updated>2016-11-16T09:57:38.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1，为了达到通过ip：端口进行访问-，做了如下配置："><a href="#1，为了达到通过ip：端口进行访问-，做了如下配置：" class="headerlink" title="1，为了达到通过ip：端口进行访问 ，做了如下配置："></a>1，为了达到通过ip：端口进行访问 ，做了如下配置：</h3><p> <img src="http://img.blog.csdn.net/20160823131643542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
 <h3 id="2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。"><a href="#2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。" class="headerlink" title="2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。"></a>2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。</h3><h3 id="3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。"><a href="#3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。" class="headerlink" title="3，解决办法：在host标签加一个 deployIgnore=”.项目名.“ ， 这样，host就不会加载。"></a>3，解决办法：在host标签加一个 deployIgnore=”.<em>项目名.</em>“ ， 这样，host就不会加载。</h3>]]></content>
@@ -119,15 +119,15 @@
     <link href="http://nudui.github.io/2016/06/16/%E8%AE%A9mysql%E6%94%AF%E6%8C%81%E8%A1%A8%E6%83%85/"/>
     <id>http://nudui.github.io/2016/06/16/让mysql支持表情/</id>
     <published>2016-06-16T08:00:57.000Z</published>
-    <updated>2016-11-16T09:22:59.000Z</updated>
+    <updated>2016-11-16T09:58:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1，修改-etc-my-cnf"><a href="#1，修改-etc-my-cnf" class="headerlink" title="1，修改 /etc/my.cnf"></a>1，修改 /etc/my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[client] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysql] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysqld] </div><div class="line">character-set-client-handshake = FALSE </div><div class="line">character-set-server = utf8mb4 </div><div class="line">collation-server = utf8mb4_unicode_ci </div><div class="line">init_connect=&apos;SET NAMES utf8mb4&apos;</div></pre></td></tr></table></figure>
-<h3 id="2，代码中"><a href="#2，代码中" class="headerlink" title="2，代码中"></a>2，代码中</h3><p>tomcat 6 + 、jetty 6 + 均在内部支持emoji，无须做任何代码上的修改即可</p>
+    <content type="html"><![CDATA[<h3 id="修改-etc-my-cnf"><a href="#修改-etc-my-cnf" class="headerlink" title="修改 /etc/my.cnf"></a>修改 /etc/my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[client] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysql] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysqld] </div><div class="line">character-set-client-handshake = FALSE </div><div class="line">character-set-server = utf8mb4 </div><div class="line">collation-server = utf8mb4_unicode_ci </div><div class="line">init_connect=&apos;SET NAMES utf8mb4&apos;</div></pre></td></tr></table></figure>
+<h3 id="代码中"><a href="#代码中" class="headerlink" title="代码中"></a>代码中</h3><p>tomcat 6 + 、jetty 6 + 均在内部支持emoji，无须做任何代码上的修改即可</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1，修改-etc-my-cnf&quot;&gt;&lt;a href=&quot;#1，修改-etc-my-cnf&quot; class=&quot;headerlink&quot; title=&quot;1，修改 /etc/my.cnf&quot;&gt;&lt;/a&gt;1，修改 /etc/my.cnf&lt;/h3&gt;&lt;figure class=&quot;high
+      &lt;h3 id=&quot;修改-etc-my-cnf&quot;&gt;&lt;a href=&quot;#修改-etc-my-cnf&quot; class=&quot;headerlink&quot; title=&quot;修改 /etc/my.cnf&quot;&gt;&lt;/a&gt;修改 /etc/my.cnf&lt;/h3&gt;&lt;figure class=&quot;highlight pl
     
     </summary>
     
@@ -143,12 +143,12 @@
     <link href="http://nudui.github.io/2015/10/10/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF%E5%B5%8C%E5%85%A5%E5%88%B0web%E7%B3%BB%E7%BB%9F/"/>
     <id>http://nudui.github.io/2015/10/10/邮箱消息嵌入到web系统/</id>
     <published>2015-10-10T09:19:41.000Z</published>
-    <updated>2016-11-16T09:24:03.000Z</updated>
+    <updated>2016-11-16T09:58:25.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="需求："><a href="#需求：" class="headerlink" title="需求："></a>需求：</h3><ul>
+    <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ul>
 <li>用户邮箱（企业邮箱）作为web系统用户标识，监控用户邮箱新邮件，转换为系统消息。</li>
 </ul>
-<h3 id="难点："><a href="#难点：" class="headerlink" title="难点："></a>难点：</h3><ol>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
 <li>其实也没啥难点，只是乍一看可能会转不过来</li>
 <li>由于企业邮箱非web系统可以控制，网上亦有多人遇此需求而无方案，故而提出鄙人方案。</li>
 <li>遇此需求，脑中闪现出第一方案，单独配置一个服务，每隔一段时间遍历所有用户邮箱，查看是否有新消息，如有则在消息表中生成数据，web平台根据新数据进行展示。缺点：用户数目过多时，压力过大，且邮箱中新邮件的频率不是特别大，故而没必要隔段时间遍历，且实现复杂。</li>
@@ -165,10 +165,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;需求：&quot;&gt;&lt;a href=&quot;#需求：&quot; class=&quot;headerlink&quot; title=&quot;需求：&quot;&gt;&lt;/a&gt;需求：&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;用户邮箱（企业邮箱）作为web系统用户标识，监控用户邮箱新邮件，转换为系统消息。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;
+&lt;h3 id=&quot;难点&quot;&gt;
     
     </summary>
     
@@ -184,23 +184,23 @@
     <link href="http://nudui.github.io/2015/10/05/%E6%96%87%E6%A1%A3%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88%E6%96%B9%E6%A1%88/"/>
     <id>http://nudui.github.io/2015/10/05/文档在线预览方案/</id>
     <published>2015-10-05T02:33:49.000Z</published>
-    <updated>2016-11-16T09:26:10.000Z</updated>
+    <updated>2016-11-16T09:58:52.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>如word文档在线预览，转换为html进行展示。</p>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="1，poi"><a href="#1，poi" class="headerlink" title="1，poi"></a>1，poi</h3><pre><code>不到万不得已不建议使用，很难转换完美。
-</code></pre><h3 id="2，七牛"><a href="#2，七牛" class="headerlink" title="2，七牛"></a>2，七牛</h3><pre><code>（1）七牛第三方文档转换服务，收费，但不高，api不易懂。
+<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h3><pre><code>不到万不得已不建议使用，很难转换完美。
+</code></pre><h3 id="七牛"><a href="#七牛" class="headerlink" title="七牛"></a>七牛</h3><pre><code>（1）七牛第三方文档转换服务，收费，但不高，api不易懂。
 
 （2）七牛自带转换服务。参考http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接  ?odconv/pdf  
  缺点：此api在七牛官网无入口，可能是七牛即将弃用的服务，毕竟有了收费的第三方文档服务。
-</code></pre><h3 id="3，某些专做文档服务的服务商"><a href="#3，某些专做文档服务的服务商" class="headerlink" title="3，某些专做文档服务的服务商"></a>3，某些专做文档服务的服务商</h3><pre><code>譬如idocv，其为了销售开放了试用接口http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。
+</code></pre><h3 id="某些专做文档服务的服务商"><a href="#某些专做文档服务的服务商" class="headerlink" title="某些专做文档服务的服务商"></a>某些专做文档服务的服务商</h3><pre><code>譬如idocv，其为了销售开放了试用接口http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。
 缺点：1，数据（文档）安全性。   
      2，如过多调用，会引起对方警觉，可能屏蔽ip。
-</code></pre><h3 id="4，其他网上方案："><a href="#4，其他网上方案：" class="headerlink" title="4，其他网上方案："></a>4，其他网上方案：</h3><blockquote>
+</code></pre><h3 id="其他网上方案："><a href="#其他网上方案：" class="headerlink" title="其他网上方案："></a>其他网上方案：</h3><blockquote>
 <p>activexobject，此js对象仅支持ie浏览器，且需要用户在浏览器上设置诸多选项。</p>
 <p>百度文库。百度要求文档必须上传到文库。</p>
 <p>其他方案已忘记，要么是系统局限，要么是操作繁琐，总之弃用。</p>
 </blockquote>
-<h3 id="5，根据2、3得到的html，可通过iframe进行展示。"><a href="#5，根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="5，根据2、3得到的html，可通过iframe进行展示。"></a>5，根据2、3得到的html，可通过iframe进行展示。</h3>]]></content>
+<h3 id="根据2、3得到的html，可通过iframe进行展示。"><a href="#根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="根据2、3得到的html，可通过iframe进行展示。"></a>根据2、3得到的html，可通过iframe进行展示。</h3>]]></content>
     
     <summary type="html">
     
@@ -221,25 +221,26 @@
     <link href="http://nudui.github.io/2015/09/24/%E4%BA%BA%E6%89%8D%E7%9F%AD%E7%A7%9F%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83/"/>
     <id>http://nudui.github.io/2015/09/24/人才短租模式思考/</id>
     <published>2015-09-24T07:52:28.000Z</published>
-    <updated>2016-11-16T09:23:41.000Z</updated>
+    <updated>2016-11-16T09:59:35.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1，想法起因"><a href="#1，想法起因" class="headerlink" title="1，想法起因"></a>1，想法起因</h3><pre><code>（1）企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。
+    <content type="html"><![CDATA[<h3 id="想法起因"><a href="#想法起因" class="headerlink" title="想法起因"></a>想法起因</h3><pre><code>（1）企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。
 （2）当下互联网盛行，人才思变，很难留职2年以上，一旦离职，个人信用值会降低，不离职，心中难受。
-</code></pre><h3 id="2，解决办法：构建人才短租模式"><a href="#2，解决办法：构建人才短租模式" class="headerlink" title="2，解决办法：构建人才短租模式"></a>2，解决办法：构建人才短租模式</h3><pre><code>（1）对于企业来说，期望人才留职3年以上，但基本不可能，且猎头费依旧高昂。短租模式根据人才租约时间制定猎头费用，企业心理承受会好一些。
+</code></pre><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>构建人才短租模式</p>
+<pre><code>（1）对于企业来说，期望人才留职3年以上，但基本不可能，且猎头费依旧高昂。短租模式根据人才租约时间制定猎头费用，企业心理承受会好一些。
 （2）对于中高端人才来说，基本只有猎头 + 内推方式换工作。通过猎头跳槽，心理预期也就是工作一年，期满再跳，不必担心个人信誉负担。
 （3）总结起来一句话：窗户纸捅破，你究竟能接受多长时间。根据时长确定薪金与猎头服务费。
-</code></pre><h3 id="3，产品玩法"><a href="#3，产品玩法" class="headerlink" title="3，产品玩法"></a>3，产品玩法</h3><pre><code>（1）依旧猎头模式。
+</code></pre><h3 id="产品玩法"><a href="#产品玩法" class="headerlink" title="产品玩法"></a>产品玩法</h3><pre><code>（1）依旧猎头模式。
 （2）每个猎头手里有聊过的人才（能确定接受租约时长）。
 （3）人才与平台签约。
-</code></pre><h3 id="4，问题与挑战"><a href="#4，问题与挑战" class="headerlink" title="4，问题与挑战"></a>4，问题与挑战</h3><pre><code>（1）通过猎头入职人才的留职时间须调研。
+</code></pre><h3 id="问题与挑战"><a href="#问题与挑战" class="headerlink" title="问题与挑战"></a>问题与挑战</h3><pre><code>（1）通过猎头入职人才的留职时间须调研。
 （2）企业与人才对此模式的认可度，或曰企业与人才对此模式的接受时长。
 （3）标准的建立。毕竟有越俎代庖嫌疑。
-</code></pre><h3 id="5，愿景"><a href="#5，愿景" class="headerlink" title="5，愿景"></a>5，愿景</h3><pre><code>弱化企业-员工的概念，就像uber要弱化汽车所有权的概念一样。
+</code></pre><h3 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h3><pre><code>弱化企业-员工的概念，就像uber要弱化汽车所有权的概念一样。
 </code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1，想法起因&quot;&gt;&lt;a href=&quot;#1，想法起因&quot; class=&quot;headerlink&quot; title=&quot;1，想法起因&quot;&gt;&lt;/a&gt;1，想法起因&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;（1）企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉
+      &lt;h3 id=&quot;想法起因&quot;&gt;&lt;a href=&quot;#想法起因&quot; class=&quot;headerlink&quot; title=&quot;想法起因&quot;&gt;&lt;/a&gt;想法起因&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;（1）企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。
     
     </summary>
     
@@ -255,9 +256,9 @@
     <link href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     <id>http://nudui.github.io/2015/05/16/api接口规则/</id>
     <published>2015-05-16T08:07:48.000Z</published>
-    <updated>2016-11-16T09:26:47.000Z</updated>
+    <updated>2016-11-16T10:00:19.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1，在header中加入参数"><a href="#1，在header中加入参数" class="headerlink" title="1，在header中加入参数"></a>1，在header中加入参数</h3><pre><code>&quot;info&quot; : {
+    <content type="html"><![CDATA[<h3 id="在header中加入参数"><a href="#在header中加入参数" class="headerlink" title="在header中加入参数"></a>在header中加入参数</h3><pre><code>&quot;info&quot; : {
       &quot;appnm&quot; : &quot;XXX&quot;, （app name）
       &quot;appVer&quot; : &quot;1.0.0&quot;,    （app版本）
       &quot;clientType&quot; : &quot;ios&quot;,   （系统类型）
@@ -273,10 +274,10 @@
       &quot;ts&quot; : &quot;1231231283213&quot;（时间戳）
       &quot;rand&quot; : &quot;12121212&quot;（一个随机数）
  }    
-</code></pre><h3 id="2，url签名算法："><a href="#2，url签名算法：" class="headerlink" title="2，url签名算法："></a>2，url签名算法：</h3><pre><code>1，sign = MD5 ( url + ts + &quot;自定义一个key&quot; )
+</code></pre><h3 id="url签名算法"><a href="#url签名算法" class="headerlink" title="url签名算法"></a>url签名算法</h3><pre><code>1，sign = MD5 ( url + ts + &quot;自定义一个key&quot; )
 2，url：去除域名部分，例如  http://api.xxx.com/aaa/bbb/ccc?p=1      ===&gt;    /aaa/bbb/ccc?p=1  
 3，服务端每次请求必须校验sign 
-</code></pre><h3 id="3，备注："><a href="#3，备注：" class="headerlink" title="3，备注："></a>3，备注：</h3><pre><code>1，在与服务端交互的每个请求，header均须加上1中参数。
+</code></pre><h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><pre><code>1，在与服务端交互的每个请求，header均须加上1中参数。
 2，接口服务端返回为json类型，且json中数据类型全部为string。
 3，请求参数使用【下划线】类型 ， 数据返回使用【驼峰】，URL使用【下划线】
 4，如果sign不正确，服务端不处理该请求
@@ -284,7 +285,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1，在header中加入参数&quot;&gt;&lt;a href=&quot;#1，在header中加入参数&quot; class=&quot;headerlink&quot; title=&quot;1，在header中加入参数&quot;&gt;&lt;/a&gt;1，在header中加入参数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;quot;info&amp;quo
+      &lt;h3 id=&quot;在header中加入参数&quot;&gt;&lt;a href=&quot;#在header中加入参数&quot; class=&quot;headerlink&quot; title=&quot;在header中加入参数&quot;&gt;&lt;/a&gt;在header中加入参数&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;&amp;quot;info&amp;quot; : {
+ 
     
     </summary>
     
@@ -300,7 +302,7 @@
     <link href="http://nudui.github.io/2015/05/16/app%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%96%B9%E6%A1%88/"/>
     <id>http://nudui.github.io/2015/05/16/app登录注册方案/</id>
     <published>2015-05-16T08:04:45.000Z</published>
-    <updated>2016-11-16T09:26:55.000Z</updated>
+    <updated>2016-11-16T09:53:33.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="与web开发不同点"><a href="#与web开发不同点" class="headerlink" title="与web开发不同点"></a>与web开发不同点</h3><pre><code>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能（或不方便、不能自定义内容），开发者需要进行面向app的模拟session实现。
 </code></pre><h3 id="借助工具"><a href="#借助工具" class="headerlink" title="借助工具"></a>借助工具</h3><pre><code>memcached\redis或其他进程外缓存。
@@ -330,19 +332,19 @@
     <link href="http://nudui.github.io/2014/07/16/mac-os-%E9%85%8D%E7%BD%AEmaven/"/>
     <id>http://nudui.github.io/2014/07/16/mac-os-配置maven/</id>
     <published>2014-07-16T08:29:03.000Z</published>
-    <updated>2016-11-16T09:24:52.000Z</updated>
+    <updated>2016-11-16T10:01:04.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="1-下载maven-。"><a href="#1-下载maven-。" class="headerlink" title="1 : 下载maven 。"></a>1 : 下载maven 。</h3><p><a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></p>
-<h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2 : 解压"></a>2 : 解压</h3><p>解压到 /usr/local   重命名为maven</p>
-<h3 id="3-新建（如无）-bash-profile-，"><a href="#3-新建（如无）-bash-profile-，" class="headerlink" title="3 : 新建（如无）.bash_profile ，"></a>3 : 新建（如无）.bash_profile ，</h3><p>编辑内容：</p>
+    <content type="html"><![CDATA[<h3 id="下载maven"><a href="#下载maven" class="headerlink" title="下载maven"></a>下载maven</h3><p><a href="http://maven.apache.org/download.cgi" target="_blank" rel="external">http://maven.apache.org/download.cgi</a></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>解压到 /usr/local   重命名为maven</p>
+<h3 id="新建（如无）-bash-profile"><a href="#新建（如无）-bash-profile" class="headerlink" title="新建（如无）.bash_profile"></a>新建（如无）.bash_profile</h3><p>编辑内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home</div><div class="line"></div><div class="line">M3_HOME=/usr/local/maven3</div><div class="line"></div><div class="line">PATH=$M3_HOME/bin:$PATH</div><div class="line"></div><div class="line">export JAVA_HOME</div><div class="line"></div><div class="line">export M3_HOME</div><div class="line"></div><div class="line">export PATH</div></pre></td></tr></table></figure>
-<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4 : 测试"></a>4 : 测试</h3><p><code>mvn -version</code></p>
-<h3 id="5-如未生效"><a href="#5-如未生效" class="headerlink" title="5 : 如未生效"></a>5 : 如未生效</h3><p><code>source .bash_profile</code> 使之生效</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><code>mvn -version</code></p>
+<h3 id="如未生效"><a href="#如未生效" class="headerlink" title="如未生效"></a>如未生效</h3><p><code>source .bash_profile</code> 使之生效</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;1-下载maven-。&quot;&gt;&lt;a href=&quot;#1-下载maven-。&quot; class=&quot;headerlink&quot; title=&quot;1 : 下载maven 。&quot;&gt;&lt;/a&gt;1 : 下载maven 。&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://maven.apache.o
+      &lt;h3 id=&quot;下载maven&quot;&gt;&lt;a href=&quot;#下载maven&quot; class=&quot;headerlink&quot; title=&quot;下载maven&quot;&gt;&lt;/a&gt;下载maven&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://maven.apache.org/download.cgi&quot; tar
     
     </summary>
     
