@@ -181,7 +181,7 @@
               
                 
                 <a class="post-title-link" href="/2016/11/16/app服务端登录接口/" itemprop="url">
-                  Unbenannt
+                  app服务端登录接口
                 </a>
               
             
@@ -218,10 +218,19 @@
         
           <span itemprop="articleBody">
             
-              <p>##与web开发不同点<br>    web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。而app不能，开发者需要进行面向app的模拟session实现。</p>
-<p>##借助工具：<br>memcached\redis或其他进程外缓存。</p>
-<p>##实现过程<br>1，在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。<br>2，注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。<br>3，登录时：<br>1，user表中查找成功。<br>2，服务端从db中获取auth，放入缓存中。<br>3，将auth返回给移动端。<br>4，移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</p>
-<p>##注<br>1，web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。<br>2，在缓存中，auth要设有效时长。<br>3，缓存中的数据结构为  auth:userid(mobile)。<br>4，当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。<br>5，web开发也可类似上述方案进行开发，不使用httpsession，原因不述。</p>
+              <p>#命名<br>Go语言强制了编码风格。<br>1，任何需要<strong>对外暴露</strong>的名字必须以<strong>大写字母</strong>开头，不需要对外暴露的则应该以<strong>小写 字母</strong>开头。<br>2，Go语言明确宣告了拥护骆驼命名法而排斥下划线法。<br>3，”{}”，左括号禁止单开一行。<br>4，gotool中包含了一个代码格式化的功能。命令：go fmt hello.go，自动格式化。</p>
+<p>#布尔类型<br>略过</p>
+<p>#基本数据类型<br>| 类型         | 取值         |<br>| ————- |:————-:|<br>| int8   | -128~127   |<br>| int16   | -32768~32767   |<br>| int32   | -2147483648~2147483647  |<br>| int64   | -9223372036854775808~9223372036854775807   |<br>| uint…   | 非负数，与上述对应 uint8:0~255   |<br>| float32   | +- 1e-45 -&gt; +- 3.4 <em> 1e38  |<br>| float64   | +- 5 </em> 1e-324 -&gt; 107 * 1e308  | </p>
+<p>#变量<br>局部变量不允许只声明不使用！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//正确的声明</div><div class="line">var x int</div><div class="line">var x int = 3</div><div class="line">var x = 3</div><div class="line">var&#123;</div><div class="line">x = 3</div><div class="line">y = 4</div><div class="line">&#125;</div><div class="line">x := 3  //仅限于在函数中。</div><div class="line">x , y := 3 , 4</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func x() &#123;</div><div class="line">var x = 3</div><div class="line">x := 3  //错误，:=用于声明 + 赋值 ，x已经声明过了，不能再次声明 ， 只能赋值。</div><div class="line">x , y := 1 , 4 //正确 ， y为新变量，此时:=对于x降级为赋值。必须有至少一个新的变量方可。</div><div class="line">&#125;</div><div class="line">退化赋值的前提条件：至少有一个新的变量被定义，且必须是同一作用域。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var x = 3</div><div class="line">func x()&#123;</div><div class="line">x := 4 //正确，此时的x与函数外的x作用域不同，相当于一个新的变量。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>#多变量<br>在进行多变量赋值时，先计算右侧的所有值，然后完成赋值操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">a , b := 1 , 2</div><div class="line">a , b = a + 1 : b + 1</div><div class="line">fmt.Println(a , b) //结果：2 ，3</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func exchange(a , b int) (int,int)&#123;</div><div class="line">a , b = b , a</div><div class="line">return a , b</div><div class="line">&#125;</div><div class="line">func main()&#123;</div><div class="line">//只想使用b</div><div class="line">_ , b = exchange(1 , 2)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>#常量<br>运行时恒定不变的，编译期间能确定值！<br>可在函数内定义，允许只定义不使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">显式类型定义： const b string = &quot;abc&quot;</div><div class="line">隐式类型定义： const b = &quot;abc&quot;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">正确的做法：const c1 = 2/3</div><div class="line">错误的做法：const c2 = getNumber() // 引发构建错误: getNumber() used as value</div></pre></td></tr></table></figure>
+<p>#字符类型<br>严格来说这并非go语言的一个类型，字符只是证书的特殊用例。byte 类型是 uint8 的别名，对于只占用 1 个字节的传统 ASCII 编码的字符来说，完全没有问题。<br>例如：<code>var ch byte = &#39;A&#39;；</code>字符使用单引号括起来。<br>在 ASCII 码表中，A 的值是 65，而使用 16 进制表示则为 41，所以下面的写法是等效的：<br>包 unicode 包含了一些针对测试字符的非常有用的函数（其中 ch 代表字符）：</p>
+<p>判断是否为字母：unicode.IsLetter(ch)<br>判断是否为数字：unicode.IsDigit(ch)<br>判断是否为空白符号：unicode.IsSpace(ch)<br>这些函数返回一个布尔值。</p>
+<p>字符串<br>字符串是UTF-8的一个序列（当字符为ASCII码时占一个字节，其他字符需要2-4个字节）。</p>
 
             
           </span>
