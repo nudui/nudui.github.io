@@ -160,7 +160,8 @@ div {
   color: #888; }
 
 .post {
-  padding: 25px 0 15px; }
+  padding: 25px 0 66px;
+  border-bottom: 1px solid #33333C; }
   .post .post-title {
     margin: 0;
     color: #555;
@@ -214,6 +215,8 @@ div {
     .post .disqus-comment-count:hover {
       color: #444; }
   .post .post-content {
+    max-height: 134px;
+    overflow: hidden;
     clear: left;
     font-size: 15px;
     line-height: 1.77;
