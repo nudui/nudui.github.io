@@ -17,7 +17,7 @@ html, button, input, select, textarea,
   font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif; }
 
 body {
-  background-color: #FFF;
+  background-color: #e6e6e6;
   color: #444;
   font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +27,10 @@ body {
 .body_container {
   padding: 0 60px;
   max-width: 1150px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3); }
 
 .content_container {
   padding-right: 50px;
