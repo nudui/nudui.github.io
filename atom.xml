@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-17T13:56:39.000Z</updated>
+  <updated>2016-11-17T14:36:39.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -20,16 +20,45 @@
     <link href="http://nudui.github.io/2016/11/17/golang%E7%AC%94%E8%AE%B0-3-%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://nudui.github.io/2016/11/17/golang笔记-3-表达式/</id>
     <published>2016-11-17T11:06:22.000Z</published>
-    <updated>2016-11-17T13:56:39.000Z</updated>
+    <updated>2016-11-17T14:36:39.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><h5 id="25个关键字"><a href="#25个关键字" class="headerlink" title="25个关键字"></a>25个关键字</h5><blockquote>
-<p>break continue, if else , go chan , var const type </p>
-<p>for range , go goto defer , switch case default fallthrough</p>
-<p>package import , func struct return map select</p>
-</blockquote>
-<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h5 id="if-else"><a href="#if-else" class="headerlink" title="if .. else .."></a>if .. else ..</h5><p>表达式的值必须是bool类型。</p>
-<p>表达式可以执行初始化语句。如下 </p>
+    <content type="html"><![CDATA[<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><h5 id="25个关键字"><a href="#25个关键字" class="headerlink" title="25个关键字"></a>25个关键字</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">break continue, if else , go chan , var const type </div><div class="line"></div><div class="line">for range , go goto defer , switch case default fallthrough</div><div class="line"></div><div class="line">package import , func struct return map select</div></pre></td></tr></table></figure>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h4 id="if-else"><a href="#if-else" class="headerlink" title="if .. else .."></a>if .. else ..</h4><ul>
+<li><p>表达式的值必须是bool类型。</p>
+</li>
+<li><p>表达式可以执行初始化语句。如下 :</p>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var x int </div><div class="line"></div><div class="line">func xinit()&#123;</div><div class="line">    x = 1000</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main()&#123;</div><div class="line">    if xinit(); x &gt; 100&#123;</div><div class="line">        ... //  可以执行</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case"></a>switch case</h4><p>无须break，自动在相应的case处执行完毕中断</p>
+<ul>
+<li>一般形式 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    a , b , c := 0 , 1 , 2</div><div class="line">    </div><div class="line">    switch x &#123;</div><div class="line">        case a , b : </div><div class="line">            fmt.Println(&quot;0 或者 1&quot;)</div><div class="line">        case 4 : </div><div class="line">            fmt.Println(&quot;值为4&quot;)</div><div class="line">        default : </div><div class="line">            fmt.Println(&quot;default value&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>表达式形式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    a , b , c := 0 , 1 , 2</div><div class="line">    </div><div class="line">    switch x := 100 ; x &#123;</div><div class="line">        case a , b : </div><div class="line">            fmt.Println(&quot;0 或者 1&quot;)</div><div class="line">        case 4 : </div><div class="line">            fmt.Println(&quot;值为4&quot;)</div><div class="line">        default : </div><div class="line">            fmt.Println(&quot;default value&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>fallthrough   必须放在case块的末尾</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    </div><div class="line">    switch x := 100 ; x &#123;</div><div class="line">        case a , b : </div><div class="line">            fmt.Println(&quot;0 或者 1&quot;)</div><div class="line">        case 100 : </div><div class="line">            x += 10</div><div class="line">            fmt.Println(x)</div><div class="line">            </div><div class="line">            fallthrough     //无条件执行下一个case，default除外。</div><div class="line">        case 101 :</div><div class="line">            x += 10</div><div class="line">            fmt.Println(x)</div><div class="line">                            //如果还有fallthrough，则继续执行下一个非default的case</div><div class="line">        default : </div><div class="line">            fmt.Println(&quot;default value&quot;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：</p>
+<ol>
+<li>不能出现重复的case。</li>
+<li>有时switch可代替if语句。</li>
+</ol>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><ul>
+<li>golang中只有for这一种循环。</li>
+<li>for循环完成了java中的while循环、for..each循环。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//普通for循环</div><div class="line">for i := 0 ; i &lt; 100 ; i ++ &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//相当于while循环</div><div class="line">for x &lt; 10 &#123;</div><div class="line">   ... </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//相当于while true</div><div class="line">for &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>for range</strong> 用于数据迭代，支持字符串、数组、数组指针、切片、字典、通道类型、键值数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    data := [10]int&#123;1, 2, 3, 4 &#125;</div><div class="line">    </div><div class="line">    for index , v := range data&#123;</div><div class="line">        fmt.Print(&quot;index is &quot; + index)</div><div class="line">        fmt.Println(&quot;value is &quot; + v)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -356,20 +385,20 @@
     <link href="http://nudui.github.io/2015/10/05/%E6%96%87%E6%A1%A3%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88%E6%96%B9%E6%A1%88/"/>
     <id>http://nudui.github.io/2015/10/05/文档在线预览方案/</id>
     <published>2015-10-05T02:33:49.000Z</published>
-    <updated>2016-11-16T15:23:29.000Z</updated>
+    <updated>2016-11-17T14:01:05.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>如word文档在线预览，转换为html进行展示。</p>
-<h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><h3 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h3><p>不到万不得已不建议使用，很难转换完美。</p>
-<h3 id="七牛"><a href="#七牛" class="headerlink" title="七牛"></a>七牛</h3><ol>
+    <content type="html"><![CDATA[<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>如word文档在线预览，转换为html进行展示。</p>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><h6 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h6><p>不到万不得已不建议使用，很难转换完美。</p>
+<h6 id="七牛"><a href="#七牛" class="headerlink" title="七牛"></a>七牛</h6><ol>
 <li>七牛第三方文档转换服务，收费，但不高，api不易懂。</li>
 <li>七牛自带转换服务。参考<a href="http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接" target="_blank" rel="external">http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接</a>  <code>?odconv/pdf</code> 。<br>缺点：此api在七牛官网无入口，可能是七牛即将弃用的服务，毕竟有了收费的第三方文档服务。</li>
 </ol>
-<h3 id="某些专做文档服务的服务商"><a href="#某些专做文档服务的服务商" class="headerlink" title="某些专做文档服务的服务商"></a>某些专做文档服务的服务商</h3><ul>
+<h6 id="某些专做文档服务的服务商"><a href="#某些专做文档服务的服务商" class="headerlink" title="某些专做文档服务的服务商"></a>某些专做文档服务的服务商</h6><ul>
 <li>譬如idocv，其为了销售开放了试用接口<a href="http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。" target="_blank" rel="external">http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。</a></li>
 <li>缺点：<br>  <em>1，数据（文档）安全性。   
   </em>2，如过多调用，会引起对方警觉，可能屏蔽ip。</li>
 </ul>
-<h3 id="其他网上方案："><a href="#其他网上方案：" class="headerlink" title="其他网上方案："></a>其他网上方案：</h3><ul>
+<h6 id="其他网上方案："><a href="#其他网上方案：" class="headerlink" title="其他网上方案："></a>其他网上方案：</h6><ul>
 <li><p>activexobject，此js对象仅支持ie浏览器，且需要用户在浏览器上设置诸多选项。</p>
 </li>
 <li><p>百度文库。百度要求文档必须上传到文库。</p>
@@ -377,12 +406,12 @@
 <li><p>其他方案已忘记，要么是系统局限，要么是操作繁琐，总之弃用。</p>
 </li>
 </ul>
-<h3 id="根据2、3得到的html，可通过iframe进行展示。"><a href="#根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="根据2、3得到的html，可通过iframe进行展示。"></a>根据2、3得到的html，可通过iframe进行展示。</h3>]]></content>
+<h6 id="根据2、3得到的html，可通过iframe进行展示。"><a href="#根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="根据2、3得到的html，可通过iframe进行展示。"></a>根据2、3得到的html，可通过iframe进行展示。</h6>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h2&gt;&lt;p&gt;如word文档在线预览，转换为html进行展示。&lt;/p&gt;
-&lt;h2 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerli
+      &lt;h3 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h3&gt;&lt;p&gt;如word文档在线预览，转换为html进行展示。&lt;/p&gt;
+&lt;h3 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerli
     
     </summary>
     
