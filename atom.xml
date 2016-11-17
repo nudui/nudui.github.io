@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-17T04:13:49.000Z</updated>
+  <updated>2016-11-17T13:56:39.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -16,11 +16,108 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>golang笔记-3-表达式</title>
+    <link href="http://nudui.github.io/2016/11/17/golang%E7%AC%94%E8%AE%B0-3-%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>http://nudui.github.io/2016/11/17/golang笔记-3-表达式/</id>
+    <published>2016-11-17T11:06:22.000Z</published>
+    <updated>2016-11-17T13:56:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><h5 id="25个关键字"><a href="#25个关键字" class="headerlink" title="25个关键字"></a>25个关键字</h5><blockquote>
+<p>break continue, if else , go chan , var const type </p>
+<p>for range , go goto defer , switch case default fallthrough</p>
+<p>package import , func struct return map select</p>
+</blockquote>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><h5 id="if-else"><a href="#if-else" class="headerlink" title="if .. else .."></a>if .. else ..</h5><p>表达式的值必须是bool类型。</p>
+<p>表达式可以执行初始化语句。如下 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var x int </div><div class="line"></div><div class="line">func xinit()&#123;</div><div class="line">    x = 1000</div><div class="line">&#125;</div><div class="line"></div><div class="line">func main()&#123;</div><div class="line">    if xinit(); x &gt; 100&#123;</div><div class="line">        ... //  可以执行</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;关键字&quot;&gt;&lt;a href=&quot;#关键字&quot; class=&quot;headerlink&quot; title=&quot;关键字&quot;&gt;&lt;/a&gt;关键字&lt;/h3&gt;&lt;h5 id=&quot;25个关键字&quot;&gt;&lt;a href=&quot;#25个关键字&quot; class=&quot;headerlink&quot; title=&quot;25个关键字&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="golang" scheme="http://nudui.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大神 on Git</title>
+    <link href="http://nudui.github.io/2016/11/17/%E5%A4%A7%E7%A5%9E-on-Git/"/>
+    <id>http://nudui.github.io/2016/11/17/大神-on-Git/</id>
+    <published>2016-11-17T06:02:11.000Z</published>
+    <updated>2016-11-17T06:39:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="赵烨"><a href="#赵烨" class="headerlink" title="赵烨"></a>赵烨</h3><ul>
+<li>java</li>
+<li>《轻松学算法》。</li>
+<li><a href="https://github.com/irfen" target="_blank" rel="external">https://github.com/irfen</a></li>
+<li><a href="http://irfen.me" target="_blank" rel="external">http://irfen.me</a></li>
+</ul>
+<h3 id="无闻"><a href="#无闻" class="headerlink" title="无闻"></a>无闻</h3><ul>
+<li>golang</li>
+<li>GIT：<a href="https://github.com/Unknwon" target="_blank" rel="external">https://github.com/Unknwon</a></li>
+</ul>
+<h3 id="谢孟军"><a href="#谢孟军" class="headerlink" title="谢孟军"></a>谢孟军</h3><ul>
+<li>《Go Web编程》、beego的作者</li>
+<li><a href="https://github.com/astaxie" target="_blank" rel="external">https://github.com/astaxie</a></li>
+<li><a href="http://edu.51cto.com/lecturer/index/user_id-6177767.html" target="_blank" rel="external">http://edu.51cto.com/lecturer/index/user_id-6177767.html</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;赵烨&quot;&gt;&lt;a href=&quot;#赵烨&quot; class=&quot;headerlink&quot; title=&quot;赵烨&quot;&gt;&lt;/a&gt;赵烨&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;java&lt;/li&gt;
+&lt;li&gt;《轻松学算法》。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/irfe
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Books on Git</title>
+    <link href="http://nudui.github.io/2016/11/17/Books-on-Git/"/>
+    <id>http://nudui.github.io/2016/11/17/Books-on-Git/</id>
+    <published>2016-11-17T05:41:11.000Z</published>
+    <updated>2016-11-17T06:36:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Go入门指南"><a href="#Go入门指南" class="headerlink" title="Go入门指南"></a>Go入门指南</h3><ul>
+<li><a href="https://github.com/nudui/the-way-to-go_ZH_CN" target="_blank" rel="external">https://github.com/nudui/the-way-to-go_ZH_CN</a></li>
+</ul>
+<h3 id="Go-Web编程"><a href="#Go-Web编程" class="headerlink" title="Go Web编程"></a>Go Web编程</h3><ul>
+<li><a href="https://github.com/astaxie/build-web-application-with-golang/tree/master/zh" target="_blank" rel="external">https://github.com/astaxie/build-web-application-with-golang/tree/master/zh</a></li>
+</ul>
+<h3 id="雨痕大神"><a href="#雨痕大神" class="headerlink" title="雨痕大神"></a>雨痕大神</h3><ul>
+<li><a href="https://github.com/qyuhen/book" target="_blank" rel="external">https://github.com/qyuhen/book</a></li>
+</ul>
+<h3 id="国外资料整理"><a href="#国外资料整理" class="headerlink" title="国外资料整理"></a>国外资料整理</h3><ul>
+<li><a href="https://github.com/dariubs/GoBooks#web-development" target="_blank" rel="external">https://github.com/dariubs/GoBooks#web-development</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Go入门指南&quot;&gt;&lt;a href=&quot;#Go入门指南&quot; class=&quot;headerlink&quot; title=&quot;Go入门指南&quot;&gt;&lt;/a&gt;Go入门指南&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nudui/the-way-to-go_
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>golang笔记-2-指针</title>
     <link href="http://nudui.github.io/2016/11/17/golang%E7%AC%94%E8%AE%B0-2-%E6%8C%87%E9%92%88/"/>
     <id>http://nudui.github.io/2016/11/17/golang笔记-2-指针/</id>
     <published>2016-11-16T18:42:55.000Z</published>
-    <updated>2016-11-17T04:13:49.000Z</updated>
+    <updated>2016-11-17T06:59:11.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="指针与内存"><a href="#指针与内存" class="headerlink" title="指针与内存"></a>指针与内存</h3><p>不能将指针与内存地址混为一谈。</p>
 <ul>
@@ -53,6 +150,11 @@
 <li>指针运算符：* ， 用于间接引用目标对象。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    x := 10</div><div class="line">    p := &amp;x</div><div class="line">    fmt.Println(p)  //  0xc42000a298</div><div class="line">    fmt.Println(*p) //  10</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h3><ul>
+<li>支持相等运算。</li>
+<li>不支持加减运算、类型转换。</li>
+<li>如果两个指针指向同一个地址，则二指针相等</li>
+</ul>
 ]]></content>
     
     <summary type="html">
@@ -67,9 +169,7 @@
       <category term="golang" scheme="http://nudui.github.io/categories/golang/"/>
     
     
-      <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
-    
-      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
+      <category term="golang 存疑" scheme="http://nudui.github.io/tags/golang-%E5%AD%98%E7%96%91/"/>
     
   </entry>
   
@@ -78,18 +178,18 @@
     <link href="http://nudui.github.io/2016/11/16/golang%E7%AC%94%E8%AE%B0-1-%E7%B1%BB%E5%9E%8B/"/>
     <id>http://nudui.github.io/2016/11/16/golang笔记-1-类型/</id>
     <published>2016-11-16T07:06:29.000Z</published>
-    <updated>2016-11-16T15:17:06.000Z</updated>
+    <updated>2016-11-17T11:05:01.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p>Go语言强制了编码风格。</p>
+    <content type="html"><![CDATA[<h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p>Go语言强制了编码风格。</p>
 <ul>
 <li>任何需要<strong>对外暴露</strong>的名字必须以<strong>大写字母</strong>开头，不需要对外暴露的则应该以<strong>小写 字母</strong>开头。</li>
 <li>Go语言明确宣告了拥护骆驼命名法而排斥下划线法。</li>
 <li>“{}”，左括号禁止单开一行。<br>gotool中包含了一个代码格式化的功能。命令：go fmt hello.go，自动格式化。</li>
 </ul>
-<h2 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h2><ul>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><ul>
 <li>略过</li>
 </ul>
-<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><table>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><table>
 <thead>
 <tr>
 <th>类型</th>
@@ -127,25 +227,26 @@
 </tr>
 </tbody>
 </table>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>局部变量不允许只声明不使用!</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>特指 slice、map、channel</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>局部变量不允许只声明不使用!</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//正确的声明</div><div class="line">var x int</div><div class="line">var x int = 3</div><div class="line">var x = 3</div><div class="line">var&#123;</div><div class="line">  x = 3</div><div class="line">  y = 4</div><div class="line">&#125;</div><div class="line">x := 3  //仅限于在函数中。</div><div class="line">x , y := 3 , 4</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func x() &#123;</div><div class="line">  var x = 3</div><div class="line">  x := 3    //错误，:=用于声明 + 赋值 ，x已经声明过了，不能再次声明 ， 只能赋值。</div><div class="line">  x , y := 1 , 4    //正确 ， y为新变量，此时:=对于x降级为赋值。必须有至少一个新的变量方可。</div><div class="line">&#125;</div><div class="line">//退化赋值的前提条件：至少有一个新的变量被定义，且必须是同一作用域。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var x = 3</div><div class="line">func x()&#123;</div><div class="line">  x := 4    //正确，此时的x与函数外的x作用域不同，相当于一个新的变量。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="多变量"><a href="#多变量" class="headerlink" title="多变量"></a>多变量</h2><p>在进行多变量赋值时，先计算右侧的所有值，然后完成赋值操作。</p>
+<h3 id="多变量"><a href="#多变量" class="headerlink" title="多变量"></a>多变量</h3><p>在进行多变量赋值时，先计算右侧的所有值，然后完成赋值操作。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">  a , b := 1 , 2</div><div class="line">  a , b = a + 1 : b + 1</div><div class="line">  fmt.Println(a , b) //结果：2 ，3</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">func exchange(a , b int) (int,int)&#123;</div><div class="line">  a , b = b , a</div><div class="line">  return a , b</div><div class="line">&#125;</div><div class="line">func main()&#123;</div><div class="line">  //只想使用b</div><div class="line">  _ , b = exchange(1 , 2)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>运行时恒定不变的，编译期间能确定值！可在函数内定义，允许只定义不使用。</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>运行时恒定不变的，编译期间能确定值！可在函数内定义，允许只定义不使用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">显式类型定义： const b string = &quot;abc&quot;</div><div class="line">隐式类型定义： const b = &quot;abc&quot;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">正确的做法：const c1 = 2/3</div><div class="line">错误的做法：const c2 = getNumber() // 引发构建错误: getNumber() used as value</div></pre></td></tr></table></figure>
-<h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><p>严格来说这并非go语言的一个类型，字符只是证书的特殊用例。byte 类型是 uint8 的别名，对于只占用 1 个字节的传统 ASCII 编码的字符来说，完全没有问题。</p>
+<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><p>严格来说这并非go语言的一个类型，字符只是证书的特殊用例。byte 类型是 uint8 的别名，对于只占用 1 个字节的传统 ASCII 编码的字符来说，完全没有问题。</p>
 <p>例如：<code>var ch byte = &#39;A&#39;</code>字符使用单引号括起来。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">判断是否为字母：unicode.IsLetter(ch)</div><div class="line">判断是否为数字：unicode.IsDigit(ch)</div><div class="line">判断是否为空白符号：unicode.IsSpace(ch)</div><div class="line">这些函数返回一个布尔值。</div></pre></td></tr></table></figure>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串是UTF-8的一个序列（当字符为ASCII码时占一个字节，其他字符需要2-4个字节）。</p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串是UTF-8的一个序列（当字符为ASCII码时占一个字节，其他字符需要2-4个字节）。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h2&gt;&lt;p&gt;Go语言强制了编码风格。&lt;/p&gt;
+      &lt;h3 id=&quot;命名&quot;&gt;&lt;a href=&quot;#命名&quot; class=&quot;headerlink&quot; title=&quot;命名&quot;&gt;&lt;/a&gt;命名&lt;/h3&gt;&lt;p&gt;Go语言强制了编码风格。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;任何需要&lt;strong&gt;对外暴露&lt;/strong&gt;的名字必须以&lt;strong&gt;大写字母&lt;
     
@@ -534,9 +635,9 @@
       <category term="抄书学算法" scheme="http://nudui.github.io/categories/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
-    
       <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
     
   </entry>
   
