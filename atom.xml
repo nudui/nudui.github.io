@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-16T15:17:06.000Z</updated>
+  <updated>2016-11-17T04:13:49.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>golang笔记-2-指针</title>
+    <link href="http://nudui.github.io/2016/11/17/golang%E7%AC%94%E8%AE%B0-2-%E6%8C%87%E9%92%88/"/>
+    <id>http://nudui.github.io/2016/11/17/golang笔记-2-指针/</id>
+    <published>2016-11-16T18:42:55.000Z</published>
+    <updated>2016-11-17T04:13:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="指针与内存"><a href="#指针与内存" class="headerlink" title="指针与内存"></a>指针与内存</h3><p>不能将指针与内存地址混为一谈。</p>
+<ul>
+<li>内存地址：每个内存字节单元的唯一编号。</li>
+<li>指针：专门用来保存地址的整形（整形？因为一切皆可用数字表示吗）变量。</li>
+</ul>
+<h6 id="如图："><a href="#如图：" class="headerlink" title="如图："></a>如图：</h6><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>p := &amp;x</th>
+<th>x := 100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>memory</td>
+<td>0x1200</td>
+<td>100</td>
+</tr>
+<tr>
+<td>address</td>
+<td>0x800</td>
+<td>0x1200</td>
+</tr>
+</tbody>
+</table>
+<h6 id="amp-与-："><a href="#amp-与-：" class="headerlink" title="&amp;与*："></a>&amp;与*：</h6><ul>
+<li>取址运算符：&amp; ， 用于获取对象地址。</li>
+<li>指针运算符：* ， 用于间接引用目标对象。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func main()&#123;</div><div class="line">    x := 10</div><div class="line">    p := &amp;x</div><div class="line">    fmt.Println(p)  //  0xc42000a298</div><div class="line">    fmt.Println(*p) //  10</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;指针与内存&quot;&gt;&lt;a href=&quot;#指针与内存&quot; class=&quot;headerlink&quot; title=&quot;指针与内存&quot;&gt;&lt;/a&gt;指针与内存&lt;/h3&gt;&lt;p&gt;不能将指针与内存地址混为一谈。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内存地址：每个内存字节单元的唯一编号。&lt;/li&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="golang" scheme="http://nudui.github.io/categories/golang/"/>
+    
+    
+      <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
+    
+      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
+    
+  </entry>
   
   <entry>
     <title>golang笔记-1-类型</title>
@@ -105,7 +163,7 @@
     <link href="http://nudui.github.io/2016/07/16/tomcat%E5%8A%A0%E8%BD%BD%E4%B8%A4%E6%AC%A1spring/"/>
     <id>http://nudui.github.io/2016/07/16/tomcat加载两次spring/</id>
     <published>2016-07-16T07:57:16.000Z</published>
-    <updated>2016-11-16T09:57:38.000Z</updated>
+    <updated>2016-11-17T04:14:06.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1，为了达到通过ip：端口进行访问-，做了如下配置："><a href="#1，为了达到通过ip：端口进行访问-，做了如下配置：" class="headerlink" title="1，为了达到通过ip：端口进行访问 ，做了如下配置："></a>1，为了达到通过ip：端口进行访问 ，做了如下配置：</h3><p> <img src="http://img.blog.csdn.net/20160823131643542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
 <h3 id="2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。"><a href="#2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。" class="headerlink" title="2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。"></a>2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。</h3><h3 id="3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。"><a href="#3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。" class="headerlink" title="3，解决办法：在host标签加一个 deployIgnore=”.项目名.“ ， 这样，host就不会加载。"></a>3，解决办法：在host标签加一个 deployIgnore=”.<em>项目名.</em>“ ， 这样，host就不会加载。</h3>]]></content>
@@ -119,7 +177,11 @@
       <category term="疑难杂症" scheme="http://nudui.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
     
-      <category term="tomcat spring 疑难杂症" scheme="http://nudui.github.io/tags/tomcat-spring-%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+      <category term="tomcat" scheme="http://nudui.github.io/tags/tomcat/"/>
+    
+      <category term="spring" scheme="http://nudui.github.io/tags/spring/"/>
+    
+      <category term="疑难杂症" scheme="http://nudui.github.io/tags/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
     
   </entry>
   
@@ -128,7 +190,7 @@
     <link href="http://nudui.github.io/2016/06/16/%E8%AE%A9mysql%E6%94%AF%E6%8C%81%E8%A1%A8%E6%83%85/"/>
     <id>http://nudui.github.io/2016/06/16/让mysql支持表情/</id>
     <published>2016-06-16T08:00:57.000Z</published>
-    <updated>2016-11-16T09:58:08.000Z</updated>
+    <updated>2016-11-17T04:12:54.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="修改-etc-my-cnf"><a href="#修改-etc-my-cnf" class="headerlink" title="修改 /etc/my.cnf"></a>修改 /etc/my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[client] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysql] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysqld] </div><div class="line">character-set-client-handshake = FALSE </div><div class="line">character-set-server = utf8mb4 </div><div class="line">collation-server = utf8mb4_unicode_ci </div><div class="line">init_connect=&apos;SET NAMES utf8mb4&apos;</div></pre></td></tr></table></figure>
 <h3 id="代码中"><a href="#代码中" class="headerlink" title="代码中"></a>代码中</h3><p>tomcat 6 + 、jetty 6 + 均在内部支持emoji，无须做任何代码上的修改即可</p>
@@ -143,7 +205,9 @@
       <category term="mysql" scheme="http://nudui.github.io/categories/mysql/"/>
     
     
-      <category term="mysql emoji" scheme="http://nudui.github.io/tags/mysql-emoji/"/>
+      <category term="mysql" scheme="http://nudui.github.io/tags/mysql/"/>
+    
+      <category term="emoji" scheme="http://nudui.github.io/tags/emoji/"/>
     
   </entry>
   
@@ -152,7 +216,7 @@
     <link href="http://nudui.github.io/2015/10/10/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF%E5%B5%8C%E5%85%A5%E5%88%B0web%E7%B3%BB%E7%BB%9F/"/>
     <id>http://nudui.github.io/2015/10/10/邮箱消息嵌入到web系统/</id>
     <published>2015-10-10T09:19:41.000Z</published>
-    <updated>2016-11-16T15:18:10.000Z</updated>
+    <updated>2016-11-17T04:13:09.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>用户邮箱（企业邮箱）作为web系统用户标识，监控用户邮箱新邮件，转换为系统消息。</p>
 <h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
@@ -180,7 +244,9 @@
       <category term="方案" scheme="http://nudui.github.io/categories/%E6%96%B9%E6%A1%88/"/>
     
     
-      <category term="mail 邮箱消息" scheme="http://nudui.github.io/tags/mail-%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF/"/>
+      <category term="mail" scheme="http://nudui.github.io/tags/mail/"/>
+    
+      <category term="邮箱消息" scheme="http://nudui.github.io/tags/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF/"/>
     
   </entry>
   
@@ -277,7 +343,7 @@
     <link href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     <id>http://nudui.github.io/2015/05/16/api接口规则/</id>
     <published>2015-05-16T08:07:48.000Z</published>
-    <updated>2016-11-16T14:54:51.000Z</updated>
+    <updated>2016-11-17T04:13:24.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="在header中加入参数"><a href="#在header中加入参数" class="headerlink" title="在header中加入参数"></a>在header中加入参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&quot;info&quot;:&#123;</div><div class="line">    &quot;appnm&quot; : &quot;XXX&quot;, （app name）</div><div class="line">    &quot;appVer&quot; : &quot;1.0.0&quot;,    （app版本）</div><div class="line">    &quot;clientType&quot; : &quot;ios&quot;,   （系统类型）</div><div class="line">    &quot;os&quot; : &quot;iPhone OS 10.0.3&quot;,（系统版本）</div><div class="line">    &quot;model&quot; : &quot;iPhone Simulator&quot;,（手机型号）</div><div class="line">    &quot;screen&quot; : &quot;320x568&quot;,（屏幕分辨）</div><div class="line">    &quot;channel&quot; : &quot;app_store&quot;,</div><div class="line">    &quot;did&quot; : &quot;E96B0235-F60C-49F4-B2F9-F1B1041C7E51&quot;（设备号）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;auth&quot;:&#123;</div><div class="line">    &quot;auth&quot;: &quot;audbbiuf7q74asdh8fa0s9dqjashdugfasd&quot;,（用户唯一标识，如有则认为已登录）</div><div class="line">    &quot;sign&quot;: &quot;fad22321acbd122121&quot;,  （签名）</div><div class="line">    &quot;ts&quot; : &quot;1231231283213&quot;（时间戳）</div><div class="line">    &quot;rand&quot; : &quot;12121212&quot;（一个随机数）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -302,7 +368,11 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="api app 接口规则" scheme="http://nudui.github.io/tags/api-app-%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
   </entry>
   
@@ -311,7 +381,7 @@
     <link href="http://nudui.github.io/2015/05/16/app%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E6%96%B9%E6%A1%88/"/>
     <id>http://nudui.github.io/2015/05/16/app登录注册方案/</id>
     <published>2015-05-16T08:04:45.000Z</published>
-    <updated>2016-11-16T15:13:07.000Z</updated>
+    <updated>2016-11-17T04:13:36.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="与web开发不同点"><a href="#与web开发不同点" class="headerlink" title="与web开发不同点"></a>与web开发不同点</h3><ul>
 <li>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。</li>
@@ -351,7 +421,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app auth" scheme="http://nudui.github.io/tags/app-auth/"/>
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="auth" scheme="http://nudui.github.io/tags/auth/"/>
     
   </entry>
   
@@ -388,7 +460,7 @@
     <link href="http://nudui.github.io/2013/11/17/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8802%EF%BC%89-%E9%9B%86%E5%90%88/"/>
     <id>http://nudui.github.io/2013/11/17/抄书学算法（02）-集合/</id>
     <published>2013-11-17T15:56:30.000Z</published>
-    <updated>2016-11-16T18:34:47.000Z</updated>
+    <updated>2016-11-17T04:12:30.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="何谓集合"><a href="#何谓集合" class="headerlink" title="何谓集合"></a>何谓集合</h3><ul>
 <li>基于数组的拓展，无长度限制。</li>
@@ -462,7 +534,9 @@
       <category term="抄书学算法" scheme="http://nudui.github.io/categories/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法 存疑" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95-%E5%AD%98%E7%96%91/"/>
+      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
+    
+      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

@@ -160,8 +160,8 @@ div {
   color: #888; }
 
 .post {
-  padding: 25px 0 66px;
-  border-bottom: 1px solid #33333C; }
+  padding: 12px 0 50px;
+  border-bottom: 4px double #ededed; }
   .post .post-title {
     margin: 0;
     color: #555;
