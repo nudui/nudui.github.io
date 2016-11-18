@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-18T03:30:38.000Z</updated>
+  <updated>2016-11-18T18:36:05.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>抄书学算法（06）--用队列实现栈</title>
+    <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8806%EF%BC%89-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/"/>
+    <id>http://nudui.github.io/2016/11/19/抄书学算法（06）-用队列实现栈/</id>
+    <published>2016-11-18T18:36:05.000Z</published>
+    <updated>2016-11-18T18:36:05.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>抄书学算法（05）--用栈实现队列</title>
+    <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8805%EF%BC%89-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
+    <id>http://nudui.github.io/2016/11/19/抄书学算法（05）-用栈实现队列/</id>
+    <published>2016-11-18T18:05:41.000Z</published>
+    <updated>2016-11-18T18:35:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><h5 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h5><p>此方案较为繁琐。</p>
+<ol>
+<li>声明两个栈A,B。</li>
+<li>队列put：将A中的所有元素压入B中，向A中压入元素，将B中所有元素压回。</li>
+<li>队列poll：将A中元素全部压入B，B出栈。</li>
+</ol>
+<h4 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h4><ol>
+<li>申明两个栈A,B。A专职入队，B专职出队。</li>
+<li>队列put：向A中压入元素。</li>
+<li>队列poll：如B中有，则B出栈。如果B为空，则将A中元素全部压入B，然后B中出栈。</li>
+</ol>
+<h3 id="实现（方案2）"><a href="#实现（方案2）" class="headerlink" title="实现（方案2）"></a>实现（方案2）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">package stack2queue;</div><div class="line"></div><div class="line">import stack.Stack;</div><div class="line"></div><div class="line">/**</div><div class="line"> * @author jack</div><div class="line"> * 2016年11月19日 上午2:20:25</div><div class="line"> */</div><div class="line">public class Queue &#123;</div><div class="line"></div><div class="line">	private Stack s1; // 专门入栈</div><div class="line">	private Stack s2; // 专门出栈</div><div class="line"></div><div class="line">	public Queue(int cap) &#123;</div><div class="line">		super();</div><div class="line">		this.s1 = new Stack(cap);</div><div class="line">		this.s2 = new Stack(cap);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入队</div><div class="line">	public boolean put(Object o) &#123;</div><div class="line">		return s1.push(o);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 出队</div><div class="line">	public Object poll() throws Exception &#123;</div><div class="line">		if (s2.isEmpty()) &#123;</div><div class="line">			stackTrans(s1, s2);</div><div class="line">		&#125;</div><div class="line">		return s2.pop();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 栈之间全拷贝</div><div class="line">	private void stackTrans(Stack stack1, Stack stack2) throws Exception &#123;</div><div class="line">		while (!stack1.isEmpty()) &#123;</div><div class="line">			Object o = stack1.pop();</div><div class="line">			stack2.push(o);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;用栈实现队列&quot;&gt;&lt;a href=&quot;#用栈实现队列&quot; class=&quot;headerlink&quot; title=&quot;用栈实现队列&quot;&gt;&lt;/a&gt;用栈实现队列&lt;/h3&gt;&lt;h5 id=&quot;方案1&quot;&gt;&lt;a href=&quot;#方案1&quot; class=&quot;headerlink&quot; title=&quot;方案1
+    
+    </summary>
+    
+      <category term="抄书学算法" scheme="http://nudui.github.io/categories/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>golang笔记-5-数据</title>
@@ -813,47 +861,6 @@
     
     
       <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抄书学算法（01）--数组</title>
-    <link href="http://nudui.github.io/2013/11/16/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8801%EF%BC%89-%E6%95%B0%E7%BB%84/"/>
-    <id>http://nudui.github.io/2013/11/16/抄书学算法（01）-数组/</id>
-    <published>2013-11-16T14:38:11.000Z</published>
-    <updated>2016-11-16T15:59:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="何谓数组"><a href="#何谓数组" class="headerlink" title="何谓数组"></a>何谓数组</h3><ol>
-<li>将 <strong>有限个同类型</strong> 的元素放在地址连续的内存中，以一个变量命名，通过序号进行访问指定元素。</li>
-<li>使用前需要预估好长度，数组不能动态增长或者缩小。有余则费，不足无奈。</li>
-</ol>
-<h3 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h3><ol>
-<li>确定一个值作为长度length。</li>
-<li>根据声明的数据类型开辟内存空间（不同类型开辟的空间也不同）。</li>
-<li>对内存空间的每一个元素都赋默认值。</li>
-</ol>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] num = new int[10];   //每个值都为0</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int[] num = new int[10];</div><div class="line">num[0] = 1;</div><div class="line">num[1] = 2;</div><div class="line">num[2] = 3;     //部分初始化</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] num = &#123;1, 2, 3&#125;   //显示初始化</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">num.length;     //length属性</div></pre></td></tr></table></figure>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><strong>长度固定</strong>。如果还想继续添加元素，只能另创一个数组。</li>
-<li>顺序访问。必须从第1个元素开始访问，虽然编程中可以通过下标指定元素，但计算机在处理时还是顺序访问。</li>
-</ol>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>由于长度固定，所以适用于不会变化的业务。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;何谓数组&quot;&gt;&lt;a href=&quot;#何谓数组&quot; class=&quot;headerlink&quot; title=&quot;何谓数组&quot;&gt;&lt;/a&gt;何谓数组&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;将 &lt;strong&gt;有限个同类型&lt;/strong&gt; 的元素放在地址连续的内存中，以一个变量命名，通过序号进行访问
-    
-    </summary>
-    
-      <category term="抄书学算法" scheme="http://nudui.github.io/categories/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
-    
     
       <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
