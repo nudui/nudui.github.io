@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-18T19:37:03.000Z</updated>
+  <updated>2016-11-18T19:40:27.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>夕拾算法（06）--用队列实现栈</title>
+    <title>算法夕拾（06）--用队列实现栈</title>
     <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8806%EF%BC%89-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/"/>
     <id>http://nudui.github.io/2016/11/19/抄书学算法（06）-用队列实现栈/</id>
     <published>2016-11-18T18:36:05.000Z</published>
-    <updated>2016-11-18T19:37:03.000Z</updated>
+    <updated>2016-11-18T19:40:27.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><ol>
 <li>声明两个队列</li>
@@ -41,7 +41,7 @@
     
     </summary>
     
-      <category term="夕拾算法" scheme="http://nudui.github.io/categories/%E5%A4%95%E6%8B%BE%E7%AE%97%E6%B3%95/"/>
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
     
     
       <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -49,11 +49,11 @@
   </entry>
   
   <entry>
-    <title>夕拾算法（05）--用栈实现队列</title>
+    <title>算法夕拾（05）--用栈实现队列</title>
     <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8805%EF%BC%89-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
     <id>http://nudui.github.io/2016/11/19/抄书学算法（05）-用栈实现队列/</id>
     <published>2016-11-18T18:05:41.000Z</published>
-    <updated>2016-11-18T19:36:57.000Z</updated>
+    <updated>2016-11-18T19:40:26.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><h4 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h4><p>此方案较为繁琐。</p>
 <ol>
@@ -75,7 +75,7 @@
     
     </summary>
     
-      <category term="夕拾算法" scheme="http://nudui.github.io/categories/%E5%A4%95%E6%8B%BE%E7%AE%97%E6%B3%95/"/>
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
     
     
       <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -83,11 +83,11 @@
   </entry>
   
   <entry>
-    <title>夕拾算法（04）--队列</title>
+    <title>算法夕拾（04）--队列</title>
     <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8804%EF%BC%89-%E9%98%9F%E5%88%97/"/>
     <id>http://nudui.github.io/2016/11/19/抄书学算法（04）-队列/</id>
     <published>2016-11-18T17:29:15.000Z</published>
-    <updated>2016-11-18T19:36:49.000Z</updated>
+    <updated>2016-11-18T19:40:25.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="队列特点"><a href="#队列特点" class="headerlink" title="队列特点"></a>队列特点</h3><ul>
 <li>一段连续的内存空间（存疑）</li>
@@ -110,7 +110,7 @@
     
     </summary>
     
-      <category term="夕拾算法" scheme="http://nudui.github.io/categories/%E5%A4%95%E6%8B%BE%E7%AE%97%E6%B3%95/"/>
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
     
     
       <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
@@ -150,11 +150,11 @@
   </entry>
   
   <entry>
-    <title>夕拾算法（03）--栈</title>
+    <title>算法夕拾（03）--栈</title>
     <link href="http://nudui.github.io/2016/11/18/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8803%EF%BC%89-%E6%A0%88/"/>
     <id>http://nudui.github.io/2016/11/18/抄书学算法（03）-栈/</id>
     <published>2016-11-17T16:50:26.000Z</published>
-    <updated>2016-11-18T19:36:42.000Z</updated>
+    <updated>2016-11-18T19:40:25.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="栈的特点"><a href="#栈的特点" class="headerlink" title="栈的特点"></a>栈的特点</h3><ul>
 <li>一段连续的内存空间</li>
@@ -182,7 +182,7 @@
     
     </summary>
     
-      <category term="夕拾算法" scheme="http://nudui.github.io/categories/%E5%A4%95%E6%8B%BE%E7%AE%97%E6%B3%95/"/>
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
     
     
       <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
@@ -190,11 +190,11 @@
   </entry>
   
   <entry>
-    <title>夕拾算法（02）--集合、散列表</title>
+    <title>算法夕拾（02）--集合、散列表</title>
     <link href="http://nudui.github.io/2016/11/17/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8802%EF%BC%89-%E9%9B%86%E5%90%88/"/>
     <id>http://nudui.github.io/2016/11/17/抄书学算法（02）-集合/</id>
     <published>2016-11-17T15:56:30.000Z</published>
-    <updated>2016-11-18T19:36:34.000Z</updated>
+    <updated>2016-11-18T19:40:23.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="何谓集合"><a href="#何谓集合" class="headerlink" title="何谓集合"></a>何谓集合</h3><ul>
 <li>基于数组的拓展，无长度限制。</li>
@@ -265,7 +265,7 @@
     
     </summary>
     
-      <category term="夕拾算法" scheme="http://nudui.github.io/categories/%E5%A4%95%E6%8B%BE%E7%AE%97%E6%B3%95/"/>
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
     
     
       <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
