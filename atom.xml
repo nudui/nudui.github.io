@@ -185,7 +185,7 @@
     <link href="http://nudui.github.io/2016/11/17/golang%E7%AC%94%E8%AE%B0-2-%E6%8C%87%E9%92%88/"/>
     <id>http://nudui.github.io/2016/11/17/golang笔记-2-指针/</id>
     <published>2016-11-16T18:42:55.000Z</published>
-    <updated>2016-11-17T06:59:11.000Z</updated>
+    <updated>2016-11-18T02:18:32.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="指针与内存"><a href="#指针与内存" class="headerlink" title="指针与内存"></a>指针与内存</h3><p>不能将指针与内存地址混为一谈。</p>
 <ul>
@@ -237,7 +237,9 @@
       <category term="golang" scheme="http://nudui.github.io/categories/golang/"/>
     
     
-      <category term="golang 存疑" scheme="http://nudui.github.io/tags/golang-%E5%AD%98%E7%96%91/"/>
+      <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
+    
+      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
     
   </entry>
   
@@ -703,9 +705,9 @@
       <category term="抄书学算法" scheme="http://nudui.github.io/categories/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
       <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
+    
+      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
