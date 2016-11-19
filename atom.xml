@@ -550,11 +550,11 @@
   </entry>
   
   <entry>
-    <title>算法（01）--数组</title>
+    <title>算法夕拾（01）--数组</title>
     <link href="http://nudui.github.io/2016/11/16/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8801%EF%BC%89-%E6%95%B0%E7%BB%84/"/>
     <id>http://nudui.github.io/2016/11/16/抄书学算法（01）-数组/</id>
     <published>2016-11-16T14:38:11.000Z</published>
-    <updated>2016-11-19T06:57:59.000Z</updated>
+    <updated>2016-11-19T06:59:03.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="何谓数组"><a href="#何谓数组" class="headerlink" title="何谓数组"></a>何谓数组</h3><ol>
 <li>将 <strong>有限个同类型</strong> 的元素放在地址连续的内存中，以一个变量命名，通过序号进行访问指定元素。</li>
