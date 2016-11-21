@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-20T22:02:00.000Z</updated>
+  <updated>2016-11-21T10:57:45.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>beego(01)</title>
+    <link href="http://nudui.github.io/2016/11/21/beego-01/"/>
+    <id>http://nudui.github.io/2016/11/21/beego-01/</id>
+    <published>2016-11-21T08:52:21.000Z</published>
+    <updated>2016-11-21T10:57:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="start"><a href="#start" class="headerlink" title="start"></a>start</h3><p>get beego : <a href="https://my.oschina.net/ichendong/blog/761467" target="_blank" rel="external">https://my.oschina.net/ichendong/blog/761467</a></p>
+<p>gov docs : <a href="https://beego.me" target="_blank" rel="external">https://beego.me</a></p>
+<h3 id="sublime"><a href="#sublime" class="headerlink" title="sublime"></a>sublime</h3><p>mac环境下快速启动工作目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rm /usr/local/bin/subl</div><div class="line"></div><div class="line">ln -s &quot;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&quot; /usr/local/bin/subl</div></pre></td></tr></table></figure>
+<p>在 ~/ 目录下创建.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim work_hello.sh</div></pre></td></tr></table></figure>
+<p>work_hello.sh ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">subl /Users/jack/gopath/src/hello</div></pre></td></tr></table></figure></p>
+<p>对该sh赋予执行权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chmod 777 work_hello.sh</div></pre></td></tr></table></figure>
+<p>开始工作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd</div><div class="line">./work_hello.sh</div></pre></td></tr></table></figure>
+<p>自动在sublime中打开工作空间。如有多个工作空间，则在~/目录下创建多个sh即可</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;start&quot;&gt;&lt;a href=&quot;#start&quot; class=&quot;headerlink&quot; title=&quot;start&quot;&gt;&lt;/a&gt;start&lt;/h3&gt;&lt;p&gt;get beego : &lt;a href=&quot;https://my.oschina.net/ichendong/blog
+    
+    </summary>
+    
+      <category term="beego" scheme="http://nudui.github.io/categories/beego/"/>
+    
+    
+      <category term="beego" scheme="http://nudui.github.io/tags/beego/"/>
+    
+  </entry>
   
   <entry>
     <title>mac安装beego</title>
@@ -835,52 +869,6 @@
     
     
       <category term="word在线预览" scheme="http://nudui.github.io/tags/word%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>人才短租模式思考</title>
-    <link href="http://nudui.github.io/2015/09/24/%E4%BA%BA%E6%89%8D%E7%9F%AD%E7%A7%9F%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83/"/>
-    <id>http://nudui.github.io/2015/09/24/人才短租模式思考/</id>
-    <published>2015-09-24T07:52:28.000Z</published>
-    <updated>2016-11-16T15:26:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="想法起因"><a href="#想法起因" class="headerlink" title="想法起因"></a>想法起因</h3><ul>
-<li>企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。</li>
-<li>当下互联网盛行，人才思变，很难留职2年以上，一旦离职，个人信用值会降低，不离职，心中难受。</li>
-</ul>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>构建人才短租模式</p>
-<ol>
-<li>对于企业来说，期望人才留职3年以上，但基本不可能，且猎头费依旧高昂。短租模式根据人才租约时间制定猎头费用，企业心理承受会好一些。</li>
-<li>对于中高端人才来说，基本只有猎头+内推方式换工作。通过猎头跳槽，心理预期也就是工作一年，期满再跳，不必担心个人信誉负担。</li>
-<li>总结起来一句话：窗户纸捅破，你究竟能接受多长时间。根据时长确定薪金与猎头服务费。</li>
-</ol>
-<h3 id="产品玩法"><a href="#产品玩法" class="headerlink" title="产品玩法"></a>产品玩法</h3><ul>
-<li>依旧猎头模式。</li>
-<li>每个猎头手里有聊过的人才（能确定接受租约时长）。</li>
-<li>人才与平台签约。</li>
-</ul>
-<h3 id="问题与挑战"><a href="#问题与挑战" class="headerlink" title="问题与挑战"></a>问题与挑战</h3><ul>
-<li>通过猎头入职人才的留职时间须调研。</li>
-<li>企业与人才对此模式的认可度，或曰企业与人才对此模式的接受时长。</li>
-<li>标准的建立。毕竟有越俎代庖嫌疑。</li>
-</ul>
-<h3 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h3><ul>
-<li>弱化企业-员工的概念，就像uber要弱化汽车所有权的概念一样。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;想法起因&quot;&gt;&lt;a href=&quot;#想法起因&quot; class=&quot;headerlink&quot; title=&quot;想法起因&quot;&gt;&lt;/a&gt;想法起因&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。&lt;/li&gt;
-    
-    </summary>
-    
-      <category term="思考" scheme="http://nudui.github.io/categories/%E6%80%9D%E8%80%83/"/>
-    
-    
-      <category term="思考" scheme="http://nudui.github.io/tags/%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
