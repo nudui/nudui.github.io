@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-21T19:52:49.000Z</updated>
+  <updated>2016-11-25T16:00:57.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>刷app短信接口-接口安全考究</title>
+    <link href="http://nudui.github.io/2016/11/25/%E5%88%B7app%E7%9F%AD%E4%BF%A1%E6%8E%A5%E5%8F%A3-%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8%E8%80%83%E7%A9%B6/"/>
+    <id>http://nudui.github.io/2016/11/25/刷app短信接口-接口安全考究/</id>
+    <published>2016-11-25T15:03:43.000Z</published>
+    <updated>2016-11-25T16:00:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="观察某体育票务app的接口结构"><a href="#观察某体育票务app的接口结构" class="headerlink" title="观察某体育票务app的接口结构"></a>观察某体育票务app的接口结构</h3><p>此app内有某语言大神，余心诚向往，隐去app名讳。<br>短信接口如下：</p>
+<p><img src="http://7q5c85.com1.z0.glb.clouddn.com/api.png" alt="短信验证码"><br>圈1：</p>
+<ul>
+<li>参数s：应该是对url进行签名</li>
+<li>参数t：时间戳</li>
+<li>参数mobile：接收短信验证码的手机</li>
+<li>http/1.1 : http协议</li>
+</ul>
+<p>圈2：</p>
+<ul>
+<li>cookie：该团队应该是原做web，习惯于cookie、session的模式（当然，这个路子是正确的，只是这个名字…暴露了自己的历史包袱）。在app中通过在header中添加参数来实现。此处与本题无关。</li>
+</ul>
+<p>圈3：</p>
+<ul>
+<li>ChannelId：一个对于业务相关的参数，无甚可说。</li>
+<li>token：应该是对设备的唯一标识吧。应该不是auth，毕竟还没登录，何来auth。</li>
+</ul>
+<p>从上可知，模拟这个【发送短信验证码】请求，最多需要这么几个参数即可模拟。笔者用postman实践，cookie可以不用管它（话说，这个cookie真的有价值吗？），传不传都无所谓。参数t，传不传也无所谓，但是timestamp真的是很有用的，不理解该团队为何将时间戳形同虚设。</p>
+<p>综上，需要参数s、参数mobile、参数Channel（放在header中）、参数token（放在header中）。</p>
+<h3 id="模拟开始"><a href="#模拟开始" class="headerlink" title="模拟开始"></a>模拟开始</h3><p><strong>某月24日：</strong></p>
+<p><img src="http://7q5c85.com1.z0.glb.clouddn.com/%E6%A8%A1%E6%8B%9Fapi.png" alt="image description"></p>
+<p>诸位应当看到，笔者已经告知对方（通过一个多余的参数“tip”），该接口（或者整个app的所有接口），都有可能被模拟，希望对方能够进行修改。<strong>注：</strong>笔者手机号也在区间内，收到了通过程序发送的短信验证码。</p>
+<p><strong>次日：</strong></p>
+<p><img src="http://7q5c85.com1.z0.glb.clouddn.com/ciri.png" alt="image description"></p>
+<p>对方完全任由刷。</p>
+<h3 id="模拟后话"><a href="#模拟后话" class="headerlink" title="模拟后话"></a>模拟后话</h3><ol>
+<li>次日的再次模拟，依然请求成功（笔者的手机号在此序列）。</li>
+<li>对方将笔者ip做了特殊处理（此项排除，笔者手机收到了验证码）。</li>
+<li>对方没有看到相应日志，没有发现接口已经被模拟。（不太可能，毕竟不是小team，就算是小team，也早该发现）</li>
+<li>对方没有看到tip参数，没有在日志中记录收到的全部参数。（感觉还是不可能，都不是小作坊，我这一个岗位一个人的小摊子还会注意到这点。。）</li>
+<li>原因究竟是什么呢？</li>
+</ol>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><ol>
+<li>笔者毕业三年，路已偏歪，没在大型厂子待过。</li>
+<li>可能笔者的整篇文章会见笑于大方家（大神甲：这年轻人太嫩，自以为破解了这个app，其实。。）</li>
+<li>不是hacker（水平真的达不到），却心向往之。</li>
+<li>个人对于接口安全的研究（方案师承毕业时的团队）<a href="http://nudui.online/2015/05/16/api接口规则/" target="_blank" rel="external">http://nudui.online/2015/05/16/api接口规则/</a>。</li>
+<li>求明白人告诉我，我这到底是不是班门弄斧。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;观察某体育票务app的接口结构&quot;&gt;&lt;a href=&quot;#观察某体育票务app的接口结构&quot; class=&quot;headerlink&quot; title=&quot;观察某体育票务app的接口结构&quot;&gt;&lt;/a&gt;观察某体育票务app的接口结构&lt;/h3&gt;&lt;p&gt;此app内有某语言大神，余心诚向往，
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>算法夕拾（09）--冒泡</title>
@@ -542,7 +607,7 @@
     <link href="http://nudui.github.io/2016/11/17/%E5%A4%A7%E7%A5%9E-on-Git/"/>
     <id>http://nudui.github.io/2016/11/17/大神-on-Git/</id>
     <published>2016-11-17T06:02:11.000Z</published>
-    <updated>2016-11-23T13:41:36.000Z</updated>
+    <updated>2016-11-25T15:01:45.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="赵烨"><a href="#赵烨" class="headerlink" title="赵烨"></a>赵烨</h3><ul>
 <li>java</li>
@@ -830,32 +895,6 @@
       <category term="spring" scheme="http://nudui.github.io/tags/spring/"/>
     
       <category term="疑难杂症" scheme="http://nudui.github.io/tags/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>让mysql支持表情</title>
-    <link href="http://nudui.github.io/2016/06/16/%E8%AE%A9mysql%E6%94%AF%E6%8C%81%E8%A1%A8%E6%83%85/"/>
-    <id>http://nudui.github.io/2016/06/16/让mysql支持表情/</id>
-    <published>2016-06-16T08:00:57.000Z</published>
-    <updated>2016-11-17T04:12:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="修改-etc-my-cnf"><a href="#修改-etc-my-cnf" class="headerlink" title="修改 /etc/my.cnf"></a>修改 /etc/my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[client] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysql] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysqld] </div><div class="line">character-set-client-handshake = FALSE </div><div class="line">character-set-server = utf8mb4 </div><div class="line">collation-server = utf8mb4_unicode_ci </div><div class="line">init_connect=&apos;SET NAMES utf8mb4&apos;</div></pre></td></tr></table></figure>
-<h3 id="代码中"><a href="#代码中" class="headerlink" title="代码中"></a>代码中</h3><p>tomcat 6 + 、jetty 6 + 均在内部支持emoji，无须做任何代码上的修改即可</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;修改-etc-my-cnf&quot;&gt;&lt;a href=&quot;#修改-etc-my-cnf&quot; class=&quot;headerlink&quot; title=&quot;修改 /etc/my.cnf&quot;&gt;&lt;/a&gt;修改 /etc/my.cnf&lt;/h3&gt;&lt;figure class=&quot;highlight pl
-    
-    </summary>
-    
-      <category term="mysql" scheme="http://nudui.github.io/categories/mysql/"/>
-    
-    
-      <category term="mysql" scheme="http://nudui.github.io/tags/mysql/"/>
-    
-      <category term="emoji" scheme="http://nudui.github.io/tags/emoji/"/>
     
   </entry>
   
