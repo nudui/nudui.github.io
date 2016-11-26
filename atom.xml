@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-26T03:42:18.000Z</updated>
+  <updated>2016-11-26T03:47:35.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务端开发-各种小问题</title>
+    <link href="http://nudui.github.io/2016/11/26/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91-%E5%90%84%E7%A7%8D%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://nudui.github.io/2016/11/26/服务端开发-各种小问题/</id>
+    <published>2016-11-25T17:39:57.000Z</published>
+    <updated>2016-11-26T03:47:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="Q：接口一般规则"><a href="#Q：接口一般规则" class="headerlink" title="Q：接口一般规则"></a>Q：接口一般规则</h4><p><strong>A</strong>：参照：<br><a href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/">http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/</a></p>
+<h4 id="Q：如何保持会话-登录时到底发生了神马"><a href="#Q：如何保持会话-登录时到底发生了神马" class="headerlink" title="Q：如何保持会话,登录时到底发生了神马"></a>Q：如何保持会话,登录时到底发生了神马</h4><p><strong>A</strong>：不建议使用httpsession，如果用httpsession，则须做好session共享策略。我的方案：<a href="http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/">http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/</a></p>
+<p><strong>标注一下</strong>：这个方案不是我原创，是跟一老大哥学的，消化了好一阵时间。</p>
+<h4 id="Q：如果有人刷我的接口肿么办"><a href="#Q：如果有人刷我的接口肿么办" class="headerlink" title="Q：如果有人刷我的接口肿么办"></a>Q：如果有人刷我的接口肿么办</h4><p><strong>A</strong>：最近我刚刷了一个场子不小的app的短信验证码接口，<strong>详情</strong> 及  <strong>解决办法</strong>请看如下：<a href="http://blog.csdn.net/z744760295/article/details/53345113" target="_blank" rel="external">http://blog.csdn.net/z744760295/article/details/53345113</a></p>
+<h4 id="Q：选用云存储还是自存储"><a href="#Q：选用云存储还是自存储" class="headerlink" title="Q：选用云存储还是自存储"></a>Q：选用云存储还是自存储</h4><p><strong>A</strong>：前期建议选用云存储，云存储平台都会有免费额度。七牛云提供10G空间，100万次GET请求；阿里云提供5G，请求次数也不会太低，团队初期足够了。</p>
+<h4 id="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"><a href="#Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办" class="headerlink" title="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"></a>Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办</h4><p><strong>A</strong>：使用云存储之前，就必须得考虑好这个问题，七牛和ali都提供自定义域名服务，在自己的域名下做配置，这样图片uri就是通过自有域名进行资源定位。此时，将云中有用的图片下载，根据路径进行文件服务器配置即可。这样，原存储云的文件就可以转入自有服务器，且uri不会改变。</p>
+<h4 id="Q：如果我想一直使用云，某天10G空间不够了怎么办"><a href="#Q：如果我想一直使用云，某天10G空间不够了怎么办" class="headerlink" title="Q：如果我想一直使用云，某天10G空间不够了怎么办"></a>Q：如果我想一直使用云，某天10G空间不够了怎么办</h4><p><strong>A</strong>：我这有个投机取巧的办法：如果某天在七牛上的空间已经使用85%，这时就着手再申请一个账号好了，在服务端代码中改一下七牛的配置，切换到第二个账号，这不就ok了吗，原uri不必去管，反正七牛也不会删掉（七牛也不知道这两个账号有啥关联），不过在第二个账号绑定域名时，还是再开一个子域名比较好，不要对第一个账号的资源进行侵扰。</p>
+<h4 id="Q：如果某天七牛发现我的小聪明，把我封掉怎么办"><a href="#Q：如果某天七牛发现我的小聪明，把我封掉怎么办" class="headerlink" title="Q：如果某天七牛发现我的小聪明，把我封掉怎么办"></a>Q：如果某天七牛发现我的小聪明，把我封掉怎么办</h4><p><strong>A</strong>：无论是哪个云，在封号前必定多方联络你，这时可把那些云图片资源取出，再放入其他的云，执行同样的策略。</p>
+<h4 id="Q：如果其他的云也封怎么办，不能一直这样下去啊"><a href="#Q：如果其他的云也封怎么办，不能一直这样下去啊" class="headerlink" title="Q：如果其他的云也封怎么办，不能一直这样下去啊"></a>Q：如果其他的云也封怎么办，不能一直这样下去啊</h4><p><strong>A</strong>：上述策略，都是为了省！省！省！省，则必定有一些荆棘。不过，就算是这个云把你封掉，也不见得就没办法。【微博】或者其他大sns，它肯定不会删图片，它还开放了各种接口，咱们可以把微博变成我们的图片服务器，这样不就好了吗。微博的水印问题，网上能找到设置方法。<strong>不过，把微博改成自己的文件服务器，是不是挺cool的</strong>。</p>
+<h4 id="Q：短信接口都有验证码条数限制，这个也能有对策吧"><a href="#Q：短信接口都有验证码条数限制，这个也能有对策吧" class="headerlink" title="Q：短信接口都有验证码条数限制，这个也能有对策吧"></a>Q：短信接口都有验证码条数限制，这个也能有对策吧</h4><p><strong>A</strong>：没错，这个策略与云存储方案类似。单个短信平台对于验证码会有单独的限制，从3条/h ~ 7条/h 不等，我在做app的时候，也会遇到这个问题，产品要求必须每小时能发8条，打电话给短信客服，确实是可以增加。但是，总觉着不舒服，于是有了以下的方案：在阿里大鱼上申请两个（或多个）账号，短信签名全部一致（不要质疑短信平台是否会允许，亲测有效，反馈给阿里大鱼，人家说没遇到过这种情况，也就默许了）。之后再代码中，只要第一个账号发送失败，就走第二个账号。</p>
+<p>当然，如果不嫌麻烦，也可以使用多个不同平台的方式，只是每个平台的接口都不一样。使用单平台多账号，好处是扩展方便，不用改多少代码。</p>
+<h4 id="Q：app版本控制怎么玩"><a href="#Q：app版本控制怎么玩" class="headerlink" title="Q：app版本控制怎么玩"></a>Q：app版本控制怎么玩</h4><p><strong>A</strong>：看到网上好多人说单独开一个接口，判断是否需要更新app。这个方案还可以吧，只是需要移动端每次打开app时请求服务端，略有些麻烦。<strong>其实大可不必，服务端完全不需要开辟单独接口</strong>：移动每次与服务端交互，服务端在header中能获取这个请求的具体版本号，缓存必须更新的版本号的value，在拦截器中计算这个版本号的value，看看是否需要强制更新，如果需要，则在拦截器阶段就返回错误码给app，app根据错误码进行提示、下载。<strong><em>这个方案的好处是</em></strong>，无须移动开发人员做太多，覆盖面广，网上的方案只有在特定某个动作触发校验，我的方案是全局校验。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;h4 id=&quot;Q：接口一般规则&quot;&gt;&lt;a href=&quot;#Q：接口一般规则&quot; class=&quot;headerlink&quot; title=&quot;Q：接口一般规则&quot;
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
   
   <entry>
     <title>服务端开发-各种小问题</title>
@@ -49,47 +87,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
       <category term="api" scheme="http://nudui.github.io/tags/api/"/>
     
-      <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务端开发-各种小问题</title>
-    <link href="http://nudui.github.io/2016/11/26/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91-%E5%90%84%E7%A7%8D%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
-    <id>http://nudui.github.io/2016/11/26/服务端开发-各种小问题/</id>
-    <published>2016-11-25T17:39:57.000Z</published>
-    <updated>2016-11-26T03:29:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="Q：接口一般规则"><a href="#Q：接口一般规则" class="headerlink" title="Q：接口一般规则"></a>Q：接口一般规则</h4><p><strong>A</strong>：参照：<br><a href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/">http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/</a></p>
-<h4 id="Q：如何保持会话-登录时到底发生了神马"><a href="#Q：如何保持会话-登录时到底发生了神马" class="headerlink" title="Q：如何保持会话,登录时到底发生了神马"></a>Q：如何保持会话,登录时到底发生了神马</h4><p><strong>A</strong>：不建议使用httpsession，如果用httpsession，则须做好session共享策略。我的方案：<a href="http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/">http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/</a></p>
-<p><strong>标注一下</strong>：这个方案不是我原创，是跟一老大哥学的，消化了好一阵时间。</p>
-<h4 id="Q：如果有人刷我的接口肿么办"><a href="#Q：如果有人刷我的接口肿么办" class="headerlink" title="Q：如果有人刷我的接口肿么办"></a>Q：如果有人刷我的接口肿么办</h4><p><strong>A</strong>：最近我刚刷了一个场子不小的app的短信验证码接口，详情及解决办法请看如下：<a href="http://blog.csdn.net/z744760295/article/details/53345113" target="_blank" rel="external">http://blog.csdn.net/z744760295/article/details/53345113</a></p>
-<h4 id="Q：选用云存储还是自存储"><a href="#Q：选用云存储还是自存储" class="headerlink" title="Q：选用云存储还是自存储"></a>Q：选用云存储还是自存储</h4><p><strong>A</strong>：前期建议选用云存储，云存储平台都会有免费额度。七牛云提供10G空间，100万次GET请求；阿里云提供5G，请求次数也不会太低，团队初期足够了。</p>
-<h4 id="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"><a href="#Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办" class="headerlink" title="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"></a>Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办</h4><p><strong>A</strong>：使用云存储之前，就必须得考虑好这个问题，七牛和ali都提供自定义域名服务，在自己的域名下做配置，这样图片uri就是通过自有域名进行资源定位。此时，将云中有用的图片下载，根据路径进行文件服务器配置即可。这样，原存储云的文件就可以转入自有服务器，且uri不会改变。</p>
-<h4 id="Q：如果我想一直使用云，某天10G空间不够了怎么办"><a href="#Q：如果我想一直使用云，某天10G空间不够了怎么办" class="headerlink" title="Q：如果我想一直使用云，某天10G空间不够了怎么办"></a>Q：如果我想一直使用云，某天10G空间不够了怎么办</h4><p><strong>A</strong>：我这有个投机取巧的办法：如果某天在七牛上的空间已经使用85%，这时就着手再申请一个账号好了，在服务端代码中改一下七牛的配置，切换到第二个账号，这不就ok了吗，原uri不必去管，反正七牛也不会删掉（七牛也不知道这两个账号有啥关联），不过在第二个账号绑定域名时，还是再开一个子域名比较好，不要对第一个账号的资源进行侵扰。</p>
-<h4 id="Q：如果某天七牛发现我的小聪明，把我封掉怎么办"><a href="#Q：如果某天七牛发现我的小聪明，把我封掉怎么办" class="headerlink" title="Q：如果某天七牛发现我的小聪明，把我封掉怎么办"></a>Q：如果某天七牛发现我的小聪明，把我封掉怎么办</h4><p><strong>A</strong>：无论是哪个云，在封号前必定多方联络你，这时可把那些云图片资源取出，再放入其他的云，执行同样的策略。</p>
-<h4 id="Q：如果其他的云也封怎么办，不能一直这样下去啊"><a href="#Q：如果其他的云也封怎么办，不能一直这样下去啊" class="headerlink" title="Q：如果其他的云也封怎么办，不能一直这样下去啊"></a>Q：如果其他的云也封怎么办，不能一直这样下去啊</h4><p><strong>A</strong>：上述策略，都是为了省！省！省！省，则必定有一些荆棘。不过，就算是这个云把你封掉，也不见得就没办法。【微博】或者其他大sns，它肯定不会删图片，它还开放了各种接口，咱们可以把微博变成我们的图片服务器，这样不就好了吗。微博的水印问题，网上能找到设置方法。<strong>不过，把微博改成自己的文件服务器，是不是挺cool的</strong>。</p>
-<h4 id="Q：短信接口都有验证码条数限制，这个也能有对策吧"><a href="#Q：短信接口都有验证码条数限制，这个也能有对策吧" class="headerlink" title="Q：短信接口都有验证码条数限制，这个也能有对策吧"></a>Q：短信接口都有验证码条数限制，这个也能有对策吧</h4><p><strong>A</strong>：没错，这个策略与云存储方案类似。单个短信平台对于验证码会有单独的限制，从3条/h ~ 7条/h 不等，我在做app的时候，也会遇到这个问题，产品要求必须每小时能发8条，打电话给短信客服，确实是可以增加。但是，总觉着不舒服，于是有了以下的方案：在阿里大鱼上申请两个（或多个）账号，短信签名全部一致（不要质疑短信平台是否会允许，亲测有效，反馈给阿里大鱼，人家说没遇到过这种情况，也就默许了）。之后再代码中，只要第一个账号发送失败，就走第二个账号。</p>
-<p>当然，如果不嫌麻烦，也可以使用多个不同平台的方式，只是每个平台的接口都不一样。使用单平台多账号，好处是扩展方便，不用改多少代码。</p>
-<h4 id="Q：app版本控制怎么玩"><a href="#Q：app版本控制怎么玩" class="headerlink" title="Q：app版本控制怎么玩"></a>Q：app版本控制怎么玩</h4><p><strong>A</strong>：看到网上好多人说单独开一个接口，判断是否需要更新app。这个方案还可以吧，只是需要移动端每次打开app时请求服务端，略有些麻烦。<strong>其实大可不必，服务端完全不需要开辟单独接口</strong>：移动每次与服务端交互，服务端在header中能获取这个请求的具体版本号，缓存必须更新的版本号的value，在拦截器中计算这个版本号的value，看看是否需要强制更新，如果需要，则在拦截器阶段就返回错误码给app，app根据错误码进行提示、下载。<strong><em>这个方案的好处是</em></strong>，无须移动开发人员做太多，覆盖面广，网上的方案只有在特定某个动作触发校验，我的方案是全局校验。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h3&gt;&lt;h4 id=&quot;Q：接口一般规则&quot;&gt;&lt;a href=&quot;#Q：接口一般规则&quot; class=&quot;headerlink&quot; title=&quot;Q：接口一般规则&quot;
-    
-    </summary>
-    
-      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
-    
-    
       <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
-      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
@@ -152,9 +152,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
       <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
