@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-26T03:30:40.000Z</updated>
+  <updated>2016-11-26T03:42:18.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://nudui.github.io/2016/11/26/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91-%E7%9F%AD%E4%BF%A1%E3%80%81%E5%AD%98%E5%82%A8%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/"/>
     <id>http://nudui.github.io/2016/11/26/服务端开发-短信、存储资源限制/</id>
     <published>2016-11-25T17:39:57.000Z</published>
-    <updated>2016-11-26T03:30:40.000Z</updated>
+    <updated>2016-11-26T03:42:18.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><h4 id="Q：接口一般规则"><a href="#Q：接口一般规则" class="headerlink" title="Q：接口一般规则"></a>Q：接口一般规则</h4><p><strong>A</strong>：参照：<br><a href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/">http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/</a></p>
 <h4 id="Q：如何保持会话-登录时到底发生了神马"><a href="#Q：如何保持会话-登录时到底发生了神马" class="headerlink" title="Q：如何保持会话,登录时到底发生了神马"></a>Q：如何保持会话,登录时到底发生了神马</h4><p><strong>A</strong>：不建议使用httpsession，如果用httpsession，则须做好session共享策略。我的方案：<a href="http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/">http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/</a></p>
-<p><strong>标注一下</strong>：这个方案不是我原创，是跟一老大哥学的，消化了好一阵时间。</p>
+<p><strong>标注一下</strong>：这个方案不是我原创，是跟一老大哥学的，消化了好一阵时间。（不过，当我消化了这个方案，这应该就算是我的了吧）</p>
 <h4 id="Q：如果有人刷我的接口肿么办"><a href="#Q：如果有人刷我的接口肿么办" class="headerlink" title="Q：如果有人刷我的接口肿么办"></a>Q：如果有人刷我的接口肿么办</h4><p><strong>A</strong>：最近我刚刷了一个场子不小的app的短信验证码接口，详情及解决办法请看如下：<a href="http://blog.csdn.net/z744760295/article/details/53345113" target="_blank" rel="external">http://blog.csdn.net/z744760295/article/details/53345113</a></p>
 <h4 id="Q：选用云存储还是自存储"><a href="#Q：选用云存储还是自存储" class="headerlink" title="Q：选用云存储还是自存储"></a>Q：选用云存储还是自存储</h4><p><strong>A</strong>：前期建议选用云存储，云存储平台都会有免费额度。七牛云提供10G空间，100万次GET请求；阿里云提供5G，请求次数也不会太低，团队初期足够了。</p>
 <h4 id="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"><a href="#Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办" class="headerlink" title="Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办"></a>Q：那如果有一天leader要求存储必须自有化，那已在db中存储的云资源uri怎么办</h4><p><strong>A</strong>：使用云存储之前，就必须得考虑好这个问题，七牛和ali都提供自定义域名服务，在自己的域名下做配置，这样图片uri就是通过自有域名进行资源定位。此时，将云中有用的图片下载，根据路径进行文件服务器配置即可。这样，原存储云的文件就可以转入自有服务器，且uri不会改变。</p>
@@ -34,6 +34,9 @@
 <h4 id="Q：短信接口都有验证码条数限制，这个也能有对策吧"><a href="#Q：短信接口都有验证码条数限制，这个也能有对策吧" class="headerlink" title="Q：短信接口都有验证码条数限制，这个也能有对策吧"></a>Q：短信接口都有验证码条数限制，这个也能有对策吧</h4><p><strong>A</strong>：没错，这个策略与云存储方案类似。单个短信平台对于验证码会有单独的限制，从3条/h ~ 7条/h 不等，我在做app的时候，也会遇到这个问题，产品要求必须每小时能发8条，打电话给短信客服，确实是可以增加。但是，总觉着不舒服，于是有了以下的方案：在阿里大鱼上申请两个（或多个）账号，短信签名全部一致（不要质疑短信平台是否会允许，亲测有效，反馈给阿里大鱼，人家说没遇到过这种情况，也就默许了）。之后再代码中，只要第一个账号发送失败，就走第二个账号。</p>
 <p>当然，如果不嫌麻烦，也可以使用多个不同平台的方式，只是每个平台的接口都不一样。使用单平台多账号，好处是扩展方便，不用改多少代码。</p>
 <h4 id="Q：app版本控制怎么玩"><a href="#Q：app版本控制怎么玩" class="headerlink" title="Q：app版本控制怎么玩"></a>Q：app版本控制怎么玩</h4><p><strong>A</strong>：看到网上好多人说单独开一个接口，判断是否需要更新app。这个方案还可以吧，只是需要移动端每次打开app时请求服务端，略有些麻烦。<strong>其实大可不必，服务端完全不需要开辟单独接口</strong>：移动每次与服务端交互，服务端在header中能获取这个请求的具体版本号，缓存必须更新的版本号的value，在拦截器中计算这个版本号的value，看看是否需要强制更新，如果需要，则在拦截器阶段就返回错误码给app，app根据错误码进行提示、下载。<strong><em>这个方案的好处是</em></strong>，无须移动开发人员做太多，覆盖面广，网上的方案只有在特定某个动作触发校验，我的方案是全局校验。</p>
+<h4 id="Q：有的app（回家吃饭app），换了个账号登录，竟然收到了原账号的消息，这咋回事"><a href="#Q：有的app（回家吃饭app），换了个账号登录，竟然收到了原账号的消息，这咋回事" class="headerlink" title="Q：有的app（回家吃饭app），换了个账号登录，竟然收到了原账号的消息，这咋回事"></a>Q：有的app（回家吃饭app），换了个账号登录，竟然收到了原账号的消息，这咋回事</h4><p><strong>A</strong>：‘回家吃饭’这个app，业务真的不错，不过它确实有那个问题（八月份的时候）。</p>
+<p><strong>先来说说这是怎么发生的：</strong>app登录后，会将devicetoken发送给服务端，服务端将devicetoken与用户id进行绑定（允许一个账号多点登录），这样每次需要push的时候，就可以根据devicetoken进行定向push。那为什么会收到原账号的push呢，因为只  <strong>做了bind，没做unbind</strong> ，‘回家吃饭’没考虑     <strong>app不重新下载而换号登录</strong> 的问题（重新下载app时，devicetoken会发生变化）！</p>
+<p><strong>怎么解决：</strong>退出登录时服务端必须<strong>解绑</strong>相应的devicetoken。</p>
 <h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><p>本人水平有限</p>
 ]]></content>
     
