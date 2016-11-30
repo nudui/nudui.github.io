@@ -48,9 +48,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
-    
       <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
@@ -113,75 +113,11 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
-    
       <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（09）--冒泡</title>
-    <link href="http://nudui.github.io/2016/11/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8809%EF%BC%89-%E5%86%92%E6%B3%A1/"/>
-    <id>http://nudui.github.io/2016/11/22/算法夕拾（09）-冒泡/</id>
-    <published>2016-11-21T19:04:30.000Z</published>
-    <updated>2016-11-21T19:52:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>两两比对，调整顺序，比较n-1次</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public static void sort(int[] arr) &#123;</div><div class="line">	for (int i = 1; i &lt; arr.length; i++) &#123;</div><div class="line">		for (int j = 0; j &lt; arr.length - i; j++) &#123;</div><div class="line">			if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">				int tmp = arr[j];</div><div class="line">				arr[j] = arr[j + 1];</div><div class="line">				arr[j + 1] = tmp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		System.out.println(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>时间：O(n2)</p>
-<p>空间：O(1)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;两两比对，调整顺序，比较n-1次&lt;/p&gt;
-&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（08）--桶排序</title>
-    <link href="http://nudui.github.io/2016/11/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8808%EF%BC%89-%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
-    <id>http://nudui.github.io/2016/11/22/算法夕拾（08）-桶排序/</id>
-    <published>2016-11-21T18:42:11.000Z</published>
-    <updated>2016-11-21T19:03:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ol>
-<li>事先准备N个桶，每个桶代表从1到N的值。</li>
-<li>将N-1个待排序数字，按照N桶的数字进行放入。</li>
-<li>相同的桶放入了n次相同数字，则相应的桶的值为n。</li>
-<li>遍历N个桶，只要桶中的值大于0，则输出序号，值为2，则输出两次该序号。</li>
-</ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> *  桶排序</div><div class="line"> */</div><div class="line">public static void sort(int[] array, int range) &#123;</div><div class="line">    </div><div class="line">    // 桶</div><div class="line">    int[] bucket = new int[range];</div><div class="line"></div><div class="line">    // 遍历array，向bucket中表示</div><div class="line">    for (int i = 0; i &lt; array.length; i++) &#123;</div><div class="line">        int index = array[i];</div><div class="line">        bucket[index] = bucket[index] + 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 输出</div><div class="line">    for (int i = 0; i &lt; bucket.length; i++) &#123;</div><div class="line">        for (int j = 0; j &lt; bucket[i]; j++) &#123;</div><div class="line">            System.out.println(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>桶排序实际上只需要遍历一遍所有的元素，然后依次放入制定的位置。如果加上输出排序的时间，那么时间复杂度为O(n+m)，n：待排序的元素个数，m：桶的个数。很快，但是空间消耗比较大。</p>
-<p>元素跨度越大，空间消耗越大，空间利用率越低，浪费越大。</p>
-<p>但是  <strong><em>快</em></strong>  ！</p>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>数据分布相对均匀，跨度不太大的场景。</p>
-<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><p>利用类似散列表的方式，改善空间利用率。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;事先准备N个桶，每个桶代表从1到N的值。&lt;/li&gt;
-&lt;li&gt;将N-1个待排序数字，按照N桶的数字进行放入。&lt;/li&gt;
-&lt;li&gt;相
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -248,147 +184,6 @@
   </entry>
   
   <entry>
-    <title>算法夕拾（07）--链表</title>
-    <link href="http://nudui.github.io/2016/11/19/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8807%EF%BC%89-%E9%93%BE%E8%A1%A8/"/>
-    <id>http://nudui.github.io/2016/11/19/算法夕拾（07）-链表/</id>
-    <published>2016-11-19T06:31:22.000Z</published>
-    <updated>2016-11-19T06:57:19.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="何谓链表"><a href="#何谓链表" class="headerlink" title="何谓链表"></a>何谓链表</h3><ul>
-<li>在物理存储上非连续、非顺序的存储结构。</li>
-<li>数据之间通过指针关联。</li>
-<li>data（数据）、next（指针）</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>物理空间不连续，内存开销较大（存储指针）。</li>
-<li>无容量限制。</li>
-<li>查找元素需要顺序遍历。</li>
-<li>操作复杂。</li>
-</ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div></pre></td><td class="code"><pre><div class="line">package linkedlist;</div><div class="line"></div><div class="line">/**</div><div class="line"> *	链表实现</div><div class="line"> */</div><div class="line">public class LinkedList &#123;</div><div class="line"></div><div class="line">	public Node head = null; // 头节点</div><div class="line">	public Node tail = null; // 尾节点</div><div class="line"></div><div class="line">	public int size = 0;</div><div class="line"></div><div class="line">	// 头插入</div><div class="line">	public boolean insertHead(Object data) &#123;</div><div class="line">		if (size == 0) &#123;</div><div class="line">			initial(data);</div><div class="line">		&#125; else &#123;</div><div class="line">			Node node = new Node(data);</div><div class="line">			node.setNext(head);</div><div class="line">			head = node;</div><div class="line">		&#125;</div><div class="line">		size++;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 尾插入</div><div class="line">	public boolean insertTail(Object data) &#123;</div><div class="line">		if (size == 0) &#123;</div><div class="line">			initial(data);</div><div class="line">		&#125; else &#123;</div><div class="line">			Node node = new Node(data);</div><div class="line">			tail.setNext(node);</div><div class="line">			tail = node;</div><div class="line">		&#125;</div><div class="line">		size++;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 中间插入,插入到index的后面</div><div class="line">	public boolean insertAfter(int index, Object data) throws Exception &#123;</div><div class="line">		if (index &gt; size) &#123;</div><div class="line">			insertTail(data);</div><div class="line">		&#125; else &#123;</div><div class="line">			if (index == 0) &#123;</div><div class="line">				insertHead(data);</div><div class="line">			&#125; else &#123;</div><div class="line">				// 获得index对应的node</div><div class="line">				Node indexNode = getByIndex(index);</div><div class="line">				Node node = new Node(data);</div><div class="line">				node.setNext(indexNode.getNext());</div><div class="line">				indexNode.setNext(node);</div><div class="line">				size++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 头删除</div><div class="line">	public boolean removeHead() throws Exception &#123;</div><div class="line">		if (size == 0) &#123;</div><div class="line">			throw new Exception(&quot;likedlist is empty , can not remove head node&quot;);</div><div class="line">		&#125;</div><div class="line">		head.setData(head.getNext().getData());</div><div class="line">		head.setNext(head.getNext().getNext());</div><div class="line">		size--;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 尾删除</div><div class="line">	public boolean removeTail() throws Exception &#123;</div><div class="line">		if (size == 0) &#123;</div><div class="line">			throw new Exception(&quot;likedlist is empty , can not remove tail node&quot;);</div><div class="line">		&#125;</div><div class="line">		size--;</div><div class="line">		Node newTail = getByIndex(size);</div><div class="line">		newTail.setNext(null);</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 中间删除</div><div class="line">	public boolean removeIndex(int index) throws Exception &#123;</div><div class="line">		if (size == 0) &#123;</div><div class="line">			throw new Exception(&quot;likedlist is empty , can not remove any node&quot;);</div><div class="line">		&#125;</div><div class="line">		Node indexNode = getByIndex(index);</div><div class="line">		indexNode.setData(indexNode.getNext().getData());</div><div class="line">		indexNode.setNext(indexNode.getNext().getNext());</div><div class="line">		size--;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 查找</div><div class="line">	public Node getByIndex(int index) throws Exception &#123;</div><div class="line">		if (index &gt; size) &#123;</div><div class="line">			throw new Exception(&quot;list is out by index &quot; + index);</div><div class="line">		&#125;</div><div class="line">		Node result = head;</div><div class="line">		for (int i = 2; i &lt;= index; i++) &#123;</div><div class="line">			result = result.getNext();</div><div class="line">		&#125;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 初始化第一个元素</div><div class="line">	public void initial(Object data) &#123;</div><div class="line">		Node n = new Node(data);</div><div class="line">		head = n;</div><div class="line">		tail = n;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    //遍历</div><div class="line">	public void traverse() &#123;</div><div class="line">		Node tmp = head;</div><div class="line">		while (tmp != null) &#123;</div><div class="line">			System.out.println(tmp.getData());</div><div class="line">			tmp = tmp.getNext();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	// 反转</div><div class="line">	public void reverse() &#123;</div><div class="line">		Node tmp = head;</div><div class="line">		Node tmp1 = tmp.getNext();</div><div class="line">		for (int i = 0; i &lt; size - 1; i++) &#123;</div><div class="line">			Node tmp2 = tmp1.getNext();</div><div class="line">			tmp1.setNext(tmp);</div><div class="line">			tmp = tmp1;</div><div class="line">			tmp1 = tmp2;</div><div class="line">		&#125;</div><div class="line">		head.setNext(null);</div><div class="line">		head = tmp;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 节点</div><div class="line">class Node &#123;</div><div class="line"></div><div class="line">	private Object data;</div><div class="line">	private Node next;</div><div class="line"></div><div class="line">	public Node() &#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Node(Object data) &#123;</div><div class="line">		super();</div><div class="line">		this.data = data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Object getData() &#123;</div><div class="line">		return data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void setData(Object data) &#123;</div><div class="line">		this.data = data;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Node getNext() &#123;</div><div class="line">		return next;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void setNext(Node next) &#123;</div><div class="line">		this.next = next;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;何谓链表&quot;&gt;&lt;a href=&quot;#何谓链表&quot; class=&quot;headerlink&quot; title=&quot;何谓链表&quot;&gt;&lt;/a&gt;何谓链表&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;在物理存储上非连续、非顺序的存储结构。&lt;/li&gt;
-&lt;li&gt;数据之间通过指针关联。&lt;/li&gt;
-&lt;li&gt;data（数
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（06）--用队列实现栈</title>
-    <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8806%EF%BC%89-%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/"/>
-    <id>http://nudui.github.io/2016/11/19/抄书学算法（06）-用队列实现栈/</id>
-    <published>2016-11-18T18:36:05.000Z</published>
-    <updated>2016-11-18T19:40:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><ol>
-<li>声明两个队列</li>
-<li>入栈：向非空队列中put元素，如都为空，则随便选。</li>
-<li>出栈：将非空中的lenth-1个元素put到另外一个队列中，出队最后一个元素。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">package queue2stack;</div><div class="line"></div><div class="line">import Queue.Queue;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 队列实现栈，可扩容</div><div class="line"> * </div><div class="line"> * @author jack</div><div class="line"> * 2016年11月19日 上午2:52:04</div><div class="line"> */</div><div class="line">public class Stack &#123;</div><div class="line"></div><div class="line">	private Queue q1;</div><div class="line">	private Queue q2;</div><div class="line"></div><div class="line">	private int cap = 10;</div><div class="line"></div><div class="line">	public Stack(int cap) &#123;</div><div class="line">		super();</div><div class="line">		this.cap = cap;</div><div class="line">		this.q1 = new Queue(cap + 1);</div><div class="line">		this.q2 = new Queue(cap + 1);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入栈</div><div class="line">	public boolean push(Object o) throws Exception &#123;</div><div class="line">		Queue q;</div><div class="line">		if (q1.isEmpty()) &#123;</div><div class="line">			q = q1;</div><div class="line">		&#125;</div><div class="line">		q = q2;</div><div class="line">		if (q.isFull()) &#123;</div><div class="line">			expand();</div><div class="line">		&#125;</div><div class="line">		q = q2;</div><div class="line">		return q.put(o);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 出栈</div><div class="line">	public Object pop() throws Exception &#123;</div><div class="line">		Queue from;</div><div class="line">		Queue to;</div><div class="line">		if (!q1.isEmpty()) &#123;</div><div class="line">			from = q1;</div><div class="line">			to = q2;</div><div class="line">		&#125; else &#123;</div><div class="line">			from = q2;</div><div class="line">			to = q1;</div><div class="line">		&#125;</div><div class="line">		queueTransExceptOne(from, to);</div><div class="line">		return from.poll();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 扩容</div><div class="line">	private void expand() throws Exception &#123;</div><div class="line">		this.cap = this.cap * 2 + 1;</div><div class="line">		Queue q3 = new Queue(this.cap);</div><div class="line">		Queue q4 = new Queue(this.cap);</div><div class="line">		queueTrans(q1, q3);</div><div class="line">		queueTrans(q2, q4);</div><div class="line">		q1 = q3;</div><div class="line">		q2 = q4;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private void queueTransExceptOne(Queue queue1, Queue queue2) throws Exception &#123;</div><div class="line">		while (queue1.getSize() &gt; 1) &#123;</div><div class="line">			queue2.put(queue1.poll());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private void queueTrans(Queue queue1, Queue queue2) throws Exception &#123;</div><div class="line">		while (!queue1.isEmpty()) &#123;</div><div class="line">			queue2.put(queue1.poll());</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>测试</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">package queue2stack;</div><div class="line"></div><div class="line">import queue2stack.Stack;</div><div class="line"></div><div class="line">/**</div><div class="line"> *</div><div class="line"> * @author jack</div><div class="line"> * 2016年11月19日 上午3:03:57</div><div class="line"> */</div><div class="line">public class Test &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Stack stack = new Stack(5);</div><div class="line"></div><div class="line">		for (int i = 0; i &lt; 15; i++) &#123;</div><div class="line">			try &#123;</div><div class="line">				stack.push(i + &quot;&quot;);</div><div class="line">			&#125; catch (Exception e) &#123;</div><div class="line">				// TODO Auto-generated catch block</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		for (int i = 0; i &lt; 15; i++) &#123;</div><div class="line">			try &#123;</div><div class="line">				System.out.println(stack.pop());</div><div class="line">			&#125; catch (Exception e) &#123;</div><div class="line">				// TODO Auto-generated catch block</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		try &#123;</div><div class="line">			System.out.println(stack.pop());</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			// TODO Auto-generated catch block</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">//		System.out.println(stack.s);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerlink&quot; title=&quot;方案&quot;&gt;&lt;/a&gt;方案&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;声明两个队列&lt;/li&gt;
-&lt;li&gt;入栈：向非空队列中put元素，如都为空，则随便选。&lt;/li&gt;
-&lt;li&gt;出栈：将非空中的lenth
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（05）--用栈实现队列</title>
-    <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8805%EF%BC%89-%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
-    <id>http://nudui.github.io/2016/11/19/抄书学算法（05）-用栈实现队列/</id>
-    <published>2016-11-18T18:05:41.000Z</published>
-    <updated>2016-11-18T19:40:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="用栈实现队列"><a href="#用栈实现队列" class="headerlink" title="用栈实现队列"></a>用栈实现队列</h3><h4 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h4><p>此方案较为繁琐。</p>
-<ol>
-<li>声明两个栈A,B。</li>
-<li>队列put：将A中的所有元素压入B中，向A中压入元素，将B中所有元素压回。</li>
-<li>队列poll：将A中元素全部压入B，B出栈。</li>
-</ol>
-<h4 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h4><ol>
-<li>申明两个栈A,B。A专职入队，B专职出队。</li>
-<li>队列put：向A中压入元素。</li>
-<li>队列poll：如B中有，则B出栈。如果B为空，则将A中元素全部压入B，然后B中出栈。</li>
-</ol>
-<h3 id="实现（方案2）"><a href="#实现（方案2）" class="headerlink" title="实现（方案2）"></a>实现（方案2）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">package stack2queue;</div><div class="line"></div><div class="line">import stack.Stack;</div><div class="line"></div><div class="line">/**</div><div class="line"> * @author jack</div><div class="line"> * 2016年11月19日 上午2:20:25</div><div class="line"> */</div><div class="line">public class Queue &#123;</div><div class="line"></div><div class="line">	private Stack s1; // 专门入栈</div><div class="line">	private Stack s2; // 专门出栈</div><div class="line"></div><div class="line">	public Queue(int cap) &#123;</div><div class="line">		super();</div><div class="line">		this.s1 = new Stack(cap);</div><div class="line">		this.s2 = new Stack(cap);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入队</div><div class="line">	public boolean put(Object o) &#123;</div><div class="line">		return s1.push(o);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 出队</div><div class="line">	public Object poll() throws Exception &#123;</div><div class="line">		if (s2.isEmpty()) &#123;</div><div class="line">			stackTrans(s1, s2);</div><div class="line">		&#125;</div><div class="line">		return s2.pop();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 栈之间全拷贝</div><div class="line">	private void stackTrans(Stack stack1, Stack stack2) throws Exception &#123;</div><div class="line">		while (!stack1.isEmpty()) &#123;</div><div class="line">			Object o = stack1.pop();</div><div class="line">			stack2.push(o);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;用栈实现队列&quot;&gt;&lt;a href=&quot;#用栈实现队列&quot; class=&quot;headerlink&quot; title=&quot;用栈实现队列&quot;&gt;&lt;/a&gt;用栈实现队列&lt;/h3&gt;&lt;h4 id=&quot;方案1&quot;&gt;&lt;a href=&quot;#方案1&quot; class=&quot;headerlink&quot; title=&quot;方案1
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（04）--队列</title>
-    <link href="http://nudui.github.io/2016/11/19/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8804%EF%BC%89-%E9%98%9F%E5%88%97/"/>
-    <id>http://nudui.github.io/2016/11/19/抄书学算法（04）-队列/</id>
-    <published>2016-11-18T17:29:15.000Z</published>
-    <updated>2016-11-18T19:40:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="队列特点"><a href="#队列特点" class="headerlink" title="队列特点"></a>队列特点</h3><ul>
-<li>一段连续的内存空间（存疑）</li>
-<li>先进先出</li>
-<li>put（入队）、poll（出队）</li>
-<li>可由数组、链表实现</li>
-<li>顺序队列、循环队列</li>
-<li>head(头) , tail(尾)</li>
-</ul>
-<p>顺序队列会造成“假上溢”（head已经poll之后，再put时却无法使用原head位置的内存），于是应使用循环队列 </p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">package Queue;</div><div class="line"></div><div class="line">/**</div><div class="line"> * </div><div class="line"> * </div><div class="line"> * @author jack</div><div class="line"> * 2016年11月19日 上午1:37:17</div><div class="line"> */</div><div class="line">public class Queue &#123;</div><div class="line">	//  h       t</div><div class="line">	// [0,1,2,3,4]</div><div class="line">	private Object[] arr;</div><div class="line">	int head = 0;</div><div class="line">	int tail = 0; // tail处不存储元素</div><div class="line"></div><div class="line">	public Queue(int cap) &#123;</div><div class="line">		arr = new Object[cap];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入队</div><div class="line">	public boolean put(Object object) throws Exception &#123;</div><div class="line">		if (isFull()) &#123;</div><div class="line">			throw new Exception(&quot;The queue is full now&quot;);</div><div class="line">		&#125;</div><div class="line">		arr[tail] = object;</div><div class="line">		tail = (tail + 1) % arr.length;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 出队</div><div class="line">	public Object poll() throws Exception &#123;</div><div class="line">		if (isEmpty()) &#123;</div><div class="line">			throw new Exception(&quot;The queue is empty now&quot;);</div><div class="line">		&#125;</div><div class="line">		Object result = arr[head];</div><div class="line">		head = (head + 1) % arr.length;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 判断是否满</div><div class="line">	public boolean isFull() &#123;</div><div class="line">		return head == (tail + 1) % arr.length;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 判断是否空</div><div class="line">	public boolean isEmpty() &#123;</div><div class="line">		return head == tail;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 获得队顶元素</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;队列特点&quot;&gt;&lt;a href=&quot;#队列特点&quot; class=&quot;headerlink&quot; title=&quot;队列特点&quot;&gt;&lt;/a&gt;队列特点&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;一段连续的内存空间（存疑）&lt;/li&gt;
-&lt;li&gt;先进先出&lt;/li&gt;
-&lt;li&gt;put（入队）、poll（出队）&lt;/l
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>golang笔记-5-数据</title>
     <link href="http://nudui.github.io/2016/11/18/golang%E7%AC%94%E8%AE%B0-5-%E6%95%B0%E6%8D%AE/"/>
     <id>http://nudui.github.io/2016/11/18/golang笔记-5-数据/</id>
@@ -415,131 +210,6 @@
     
     
       <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（03）--栈</title>
-    <link href="http://nudui.github.io/2016/11/18/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8803%EF%BC%89-%E6%A0%88/"/>
-    <id>http://nudui.github.io/2016/11/18/抄书学算法（03）-栈/</id>
-    <published>2016-11-17T16:50:26.000Z</published>
-    <updated>2016-11-18T19:40:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="栈的特点"><a href="#栈的特点" class="headerlink" title="栈的特点"></a>栈的特点</h3><ul>
-<li>一段连续的内存空间</li>
-<li>先进后出</li>
-<li>push（进栈）、pop（出栈）</li>
-</ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">package stack;</div><div class="line"></div><div class="line">import java.util.Arrays;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 栈的定义</div><div class="line"> *</div><div class="line"> * @author jack</div><div class="line"> * 2016-11-18 上午12:56:22</div><div class="line"> */</div><div class="line">public class Stack &#123;</div><div class="line">	</div><div class="line">	private int cap = 10;   // 数组长度</div><div class="line">	</div><div class="line">	private int size = 0;   // 已经使用长度</div><div class="line"></div><div class="line">	private Object[] arr;	// 存储</div><div class="line"></div><div class="line">	// 构造器</div><div class="line">	public Stack(int cap) &#123;</div><div class="line">		super();</div><div class="line">		this.cap = cap;</div><div class="line">		arr = new Object[cap];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 入栈，考虑扩容</div><div class="line">	public boolean push(Object object) &#123;</div><div class="line">		// 扩容</div><div class="line">		if (isFull()) &#123;</div><div class="line">			expand();</div><div class="line">		&#125;</div><div class="line">		//添加元素</div><div class="line">		arr[size ++] = object;</div><div class="line">		return true;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	// 出栈</div><div class="line">	public Object pop() throws Exception&#123;</div><div class="line">		if(isEmpty())&#123;</div><div class="line">			throw new Exception(&quot;No ele in this stack&quot;);</div><div class="line">		&#125;</div><div class="line">		Object result = getTop();</div><div class="line">		size-- ;</div><div class="line">		return result;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	// 栈顶元素</div><div class="line">	public Object getTop()&#123;</div><div class="line">		return arr[size - 1];</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	// 判断是否满</div><div class="line">	public boolean isFull() &#123;</div><div class="line">		return size == cap;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// 判断是否空</div><div class="line">	public boolean isEmpty() &#123;</div><div class="line">		return size == 0;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    // 扩容</div><div class="line">	private void expand() &#123;</div><div class="line">		cap = cap * 2;</div><div class="line">		arr = Arrays.copyOf(arr, cap);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">package stack;</div><div class="line"></div><div class="line">/**</div><div class="line"> * @author jack</div><div class="line"> * 2016-11-18 上午1:08:53</div><div class="line"> */</div><div class="line">public class Test &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Stack stack = new Stack(5);</div><div class="line">		</div><div class="line">		for (int i = 0; i &lt; 15; i++) &#123;</div><div class="line">			stack.push(i + &quot;&quot;);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		for (int i = 0; i &lt; 15; i++) &#123;</div><div class="line">			try &#123;</div><div class="line">				System.out.println(stack.pop());</div><div class="line">			&#125; catch (Exception e) &#123;</div><div class="line">				// TODO Auto-generated catch block</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		try &#123;</div><div class="line">			System.out.println(stack.pop());</div><div class="line">		&#125; catch (Exception e) &#123;</div><div class="line">			// TODO Auto-generated catch block</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
-<li>逆序输出。</li>
-<li>语法检查：凡是遇到“（”则入栈，只要遇到“）”就对比栈顶元素是否与之对应。</li>
-<li>数制转换。</li>
-</ul>
-<p>数制转换：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">题目：十进制100转换为8进制</div><div class="line">解法：  将 100 ➗ 8 = 12 余 4，将4压入栈。</div><div class="line">        将 12 ➗ 8  = 1 余 4 ,  将4压入栈 。</div><div class="line">        1 压入栈</div><div class="line">        出栈：144</div><div class="line">结果：  144</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;栈的特点&quot;&gt;&lt;a href=&quot;#栈的特点&quot; class=&quot;headerlink&quot; title=&quot;栈的特点&quot;&gt;&lt;/a&gt;栈的特点&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;一段连续的内存空间&lt;/li&gt;
-&lt;li&gt;先进后出&lt;/li&gt;
-&lt;li&gt;push（进栈）、pop（出栈）&lt;/li&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（02）--集合、散列表</title>
-    <link href="http://nudui.github.io/2016/11/17/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8802%EF%BC%89-%E9%9B%86%E5%90%88/"/>
-    <id>http://nudui.github.io/2016/11/17/抄书学算法（02）-集合/</id>
-    <published>2016-11-17T15:56:30.000Z</published>
-    <updated>2016-11-18T19:40:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="何谓集合"><a href="#何谓集合" class="headerlink" title="何谓集合"></a>何谓集合</h3><ul>
-<li>基于数组的拓展，无长度限制。</li>
-<li><strong>列表</strong>：有序集合。链表、队列、栈。使用数组实现。</li>
-<li><strong>集</strong>：无序、数据不能重复。使用散列表实现。</li>
-<li><strong>多重集</strong>：无序、数据可重复。可通过排序转换为列表。（不知道是什么鬼，没用过）</li>
-<li><strong>数、图</strong>：略。</li>
-</ul>
-<h3 id="列表特点（变长数组）"><a href="#列表特点（变长数组）" class="headerlink" title="列表特点（变长数组）"></a>列表特点（变长数组）</h3><ul>
-<li>变长。在不够长的时候通过数组拷贝的方式创建新数组。</li>
-<li>拷贝的方式会造成性能耗损。</li>
-<li>查询欠佳。</li>
-<li>查询、修改的时间复杂度为O(n)。</li>
-<li>查找顺序存储的结构类型，在数据量大的情况下，依旧是从0开始，一个个的去访问。效率很低。</li>
-</ul>
-<h3 id="何谓散列表"><a href="#何谓散列表" class="headerlink" title="何谓散列表"></a>何谓散列表</h3><ul>
-<li>又称“<strong>哈希表</strong>”，能够通过key直接访问到具体元素。通过key访问一个映射表来得到value的地址。这个映射表也称为“<strong>散列函数</strong>”或者“<strong>哈希函数</strong>”。存放记录的数组叫做“<strong>散列表</strong>”。</li>
-<li>通过不同的key，可能映射到相同的地址，这种现象叫做 “碰撞” 。</li>
-<li>散列表有两种用法，一种是k=v，即set。另一种即map。</li>
-</ul>
-<h4 id="哈希函数的实现"><a href="#哈希函数的实现" class="headerlink" title="哈希函数的实现"></a>哈希函数的实现</h4><p>考虑因素：关键字的长度、哈希表的大小、关键字的分布情况、记录的查找频率等</p>
-<ul>
-<li><p><strong>直接寻址法</strong>：取关键字或者关键字的某个线性函数值作为散列地址。</p>
-</li>
-<li><p><strong>数字分析法</strong>：通过对数据的分析，发现冲突较小的部分，构造散列地址。</p>
-</li>
-<li><p><strong>取随机数法</strong>：取关键字的随机值作为散列地址。适用于关键字长度不一致的情况。</p>
-</li>
-</ul>
-<h4 id="哈希函数冲突处理"><a href="#哈希函数冲突处理" class="headerlink" title="哈希函数冲突处理"></a>哈希函数冲突处理</h4><p>对不同的key进行hash运算，可能会出现相同的结果。处理如下：</p>
-<ul>
-<li><p><strong>开放地址法</strong>： 简单地讲，也就是说，一间厕所，来了一个顾客就蹲其对应的位置，如果又来一个顾客，把厕所单间门拉开，一看里面有位童鞋正在用劲，那么怎么办？很自然的，拉另一个单间的门，看看有人不，有的话就继续找坑。当然了，一般来说，这个顾客不会按顺序一个一个地拉厕所门，而是会去拉他认为有可能没有被占用的单间的门，这可以通过闻味道，听声音来辨别，这就是寻址查找算法。</p>
-</li>
-<li><p><strong>再哈希法</strong>：产生冲突后使用关键字的其他部分再次进行计算取址，如还是冲突则再用其它的部分hash。缺点：时间增加了。</p>
-</li>
-<li><strong>链地址法</strong>：在地址上做一个链表，存储。</li>
-<li><strong>公共溢出区</strong>：建立一个公共溢出区。</li>
-</ul>
-<h4 id="散列表存储结构"><a href="#散列表存储结构" class="headerlink" title="散列表存储结构"></a>散列表存储结构</h4><ul>
-<li>一个好的散列设计，除了一个良好的hash函数外，还要有好的冲突处理方式。一般选择链地址法。</li>
-<li>数组 + 链表</li>
-</ul>
-<h4 id="散列表的特点"><a href="#散列表的特点" class="headerlink" title="散列表的特点"></a>散列表的特点</h4><ul>
-<li>访问速度快：通过散列函数将key指定到一个地址上，所以在访问的时候不需要一个一个查找。增删改查都很快。（！！！！存疑，hash方法到底是得到一个数组index还是内存地址）</li>
-<li>需要额外的空间：散列表实际上不太可能满载；额外空间处理冲突。</li>
-<li>无序。</li>
-<li>可能会产生碰撞，使得散列复杂。</li>
-<li>数据量大（map快满载）时，性能下降。（冲突太多，在链表中太麻烦）</li>
-</ul>
-<h4 id="散列表的适用场景"><a href="#散列表的适用场景" class="headerlink" title="散列表的适用场景"></a>散列表的适用场景</h4><p>适合无序的，需要快速访问的情况。</p>
-<ul>
-<li>缓存。</li>
-<li>快速查找。判断set中是否存在某指定元素</li>
-</ul>
-<h4 id="散列表性能分析"><a href="#散列表性能分析" class="headerlink" title="散列表性能分析"></a>散列表性能分析</h4><ul>
-<li><p>如果没有冲突，通过对key进行hash寻址，完全是O(1)的效率，但是冲突在所难免。通常使用链地址法来处理冲突。碰撞之后需要遍历链表，时间复杂度为O(L)，L为链表长度。</p>
-</li>
-<li><p>当map负载很大的时候，说明大部分地址已经有值了，此时再添加元素，势必碰撞，势必走链表，于是性能下降。此时应当扩容，java的hashMap扩容因子为0.75，当负载达到75%的时候进行扩容。扩容之后进行大排版，也许之前在链表中存储，现在在数组中存储。</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;何谓集合&quot;&gt;&lt;a href=&quot;#何谓集合&quot; class=&quot;headerlink&quot; title=&quot;何谓集合&quot;&gt;&lt;/a&gt;何谓集合&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;基于数组的拓展，无长度限制。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;列表&lt;/strong&gt;：有序集合。链表、队列、栈
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="存疑" scheme="http://nudui.github.io/tags/%E5%AD%98%E7%96%91/"/>
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -786,47 +456,6 @@
   </entry>
   
   <entry>
-    <title>算法夕拾（01）--数组</title>
-    <link href="http://nudui.github.io/2016/11/16/%E6%8A%84%E4%B9%A6%E5%AD%A6%E7%AE%97%E6%B3%95%EF%BC%8801%EF%BC%89-%E6%95%B0%E7%BB%84/"/>
-    <id>http://nudui.github.io/2016/11/16/抄书学算法（01）-数组/</id>
-    <published>2016-11-16T14:38:11.000Z</published>
-    <updated>2016-11-19T06:59:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="何谓数组"><a href="#何谓数组" class="headerlink" title="何谓数组"></a>何谓数组</h3><ol>
-<li>将 <strong>有限个同类型</strong> 的元素放在地址连续的内存中，以一个变量命名，通过序号进行访问指定元素。</li>
-<li>使用前需要预估好长度，数组不能动态增长或者缩小。有余则费，不足无奈。</li>
-</ol>
-<h3 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h3><ol>
-<li>确定一个值作为长度length。</li>
-<li>根据声明的数据类型开辟内存空间（不同类型开辟的空间也不同）。</li>
-<li>对内存空间的每一个元素都赋默认值。</li>
-</ol>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] num = new int[10];   //每个值都为0</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">int[] num = new int[10];</div><div class="line">num[0] = 1;</div><div class="line">num[1] = 2;</div><div class="line">num[2] = 3;     //部分初始化</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int[] num = &#123;1, 2, 3&#125;   //显示初始化</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">num.length;     //length属性</div></pre></td></tr></table></figure>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><strong>长度固定</strong>。如果还想继续添加元素，只能另创一个数组。</li>
-<li>顺序访问。必须从第1个元素开始访问，虽然编程中可以通过下标指定元素，但计算机在处理时还是顺序访问。</li>
-</ol>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>由于长度固定，所以适用于不会变化的业务。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;何谓数组&quot;&gt;&lt;a href=&quot;#何谓数组&quot; class=&quot;headerlink&quot; title=&quot;何谓数组&quot;&gt;&lt;/a&gt;何谓数组&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;将 &lt;strong&gt;有限个同类型&lt;/strong&gt; 的元素放在地址连续的内存中，以一个变量命名，通过序号进行访问
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>golang笔记-1-类型</title>
     <link href="http://nudui.github.io/2016/11/16/golang%E7%AC%94%E8%AE%B0-1-%E7%B1%BB%E5%9E%8B/"/>
     <id>http://nudui.github.io/2016/11/16/golang笔记-1-类型/</id>
@@ -909,6 +538,342 @@
     
     
       <category term="golang" scheme="http://nudui.github.io/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat加载两次spring</title>
+    <link href="http://nudui.github.io/2016/07/16/tomcat%E5%8A%A0%E8%BD%BD%E4%B8%A4%E6%AC%A1spring/"/>
+    <id>http://nudui.github.io/2016/07/16/tomcat加载两次spring/</id>
+    <published>2016-07-16T07:57:16.000Z</published>
+    <updated>2016-11-17T04:14:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1，为了达到通过ip：端口进行访问-，做了如下配置："><a href="#1，为了达到通过ip：端口进行访问-，做了如下配置：" class="headerlink" title="1，为了达到通过ip：端口进行访问 ，做了如下配置："></a>1，为了达到通过ip：端口进行访问 ，做了如下配置：</h3><p> <img src="http://img.blog.csdn.net/20160823131643542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
+<h3 id="2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。"><a href="#2，然而，host标签加载一次webapps里面的项目-，-context标签加载一次docbase的项目，于是造成了两次加载。" class="headerlink" title="2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。"></a>2，然而，host标签加载一次webapps里面的项目 ， context标签加载一次docbase的项目，于是造成了两次加载。</h3><h3 id="3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。"><a href="#3，解决办法：在host标签加一个-deployIgnore-”-项目名-“-，-这样，host就不会加载。" class="headerlink" title="3，解决办法：在host标签加一个 deployIgnore=”.项目名.“ ， 这样，host就不会加载。"></a>3，解决办法：在host标签加一个 deployIgnore=”.<em>项目名.</em>“ ， 这样，host就不会加载。</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1，为了达到通过ip：端口进行访问-，做了如下配置：&quot;&gt;&lt;a href=&quot;#1，为了达到通过ip：端口进行访问-，做了如下配置：&quot; class=&quot;headerlink&quot; title=&quot;1，为了达到通过ip：端口进行访问 ，做了如下配置：&quot;&gt;&lt;/a&gt;1，为了达到通过
+    
+    </summary>
+    
+      <category term="疑难杂症" scheme="http://nudui.github.io/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+    
+      <category term="tomcat" scheme="http://nudui.github.io/tags/tomcat/"/>
+    
+      <category term="spring" scheme="http://nudui.github.io/tags/spring/"/>
+    
+      <category term="疑难杂症" scheme="http://nudui.github.io/tags/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让mysql支持表情</title>
+    <link href="http://nudui.github.io/2016/06/16/%E8%AE%A9mysql%E6%94%AF%E6%8C%81%E8%A1%A8%E6%83%85/"/>
+    <id>http://nudui.github.io/2016/06/16/让mysql支持表情/</id>
+    <published>2016-06-16T08:00:57.000Z</published>
+    <updated>2016-11-17T04:12:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="修改-etc-my-cnf"><a href="#修改-etc-my-cnf" class="headerlink" title="修改 /etc/my.cnf"></a>修改 /etc/my.cnf</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[client] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysql] </div><div class="line">default-character-set = utf8mb4</div><div class="line"></div><div class="line">[mysqld] </div><div class="line">character-set-client-handshake = FALSE </div><div class="line">character-set-server = utf8mb4 </div><div class="line">collation-server = utf8mb4_unicode_ci </div><div class="line">init_connect=&apos;SET NAMES utf8mb4&apos;</div></pre></td></tr></table></figure>
+<h3 id="代码中"><a href="#代码中" class="headerlink" title="代码中"></a>代码中</h3><p>tomcat 6 + 、jetty 6 + 均在内部支持emoji，无须做任何代码上的修改即可</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;修改-etc-my-cnf&quot;&gt;&lt;a href=&quot;#修改-etc-my-cnf&quot; class=&quot;headerlink&quot; title=&quot;修改 /etc/my.cnf&quot;&gt;&lt;/a&gt;修改 /etc/my.cnf&lt;/h3&gt;&lt;figure class=&quot;highlight pl
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://nudui.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://nudui.github.io/tags/mysql/"/>
+    
+      <category term="emoji" scheme="http://nudui.github.io/tags/emoji/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>邮箱消息嵌入到web系统</title>
+    <link href="http://nudui.github.io/2015/10/10/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF%E5%B5%8C%E5%85%A5%E5%88%B0web%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://nudui.github.io/2015/10/10/邮箱消息嵌入到web系统/</id>
+    <published>2015-10-10T09:19:41.000Z</published>
+    <updated>2016-11-17T04:13:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>用户邮箱（企业邮箱）作为web系统用户标识，监控用户邮箱新邮件，转换为系统消息。</p>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ol>
+<li>其实也没啥难点，只是乍一看可能会转不过来</li>
+<li>由于企业邮箱非web系统可以控制，网上亦有多人遇此需求而无方案，故而提出鄙人方案。</li>
+<li>遇此需求，脑中闪现出第一方案，单独配置一个服务，每隔一段时间遍历所有用户邮箱，查看是否有新消息，如有则在消息表中生成数据，web平台根据新数据进行展示。缺点：用户数目过多时，压力过大，且邮箱中新邮件的频率不是特别大，故而没必要隔段时间遍历，且实现复杂。</li>
+</ol>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><ol>
+<li>部署单独服务（非必要），创建用户填写邮箱授权的页面，编写接口进行对单个用户邮箱进行查询。</li>
+<li>触发此服务，web平台每隔一段时间，触发1中接口。</li>
+<li>如有新邮件，则在消息表中增加数据。</li>
+<li>web平台自有消息提醒。</li>
+<li>关于如何通过java进行邮箱访问，请自行研究。</li>
+<li>最后请大家平时注重方案的构建能力，此方案思考用时半工作日，编码测试半工作日，不要因直观不能实现就轻易说  no  I cant，甚至<strong>理直气壮</strong>的说“不能实现”。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;p&gt;用户邮箱（企业邮箱）作为web系统用户标识，监控用户邮箱新邮件，转换为系统消息。&lt;/p&gt;
+&lt;h3 id=&quot;难点&quot;&gt;&lt;a href=&quot;#难点&quot;
+    
+    </summary>
+    
+      <category term="方案" scheme="http://nudui.github.io/categories/%E6%96%B9%E6%A1%88/"/>
+    
+    
+      <category term="mail" scheme="http://nudui.github.io/tags/mail/"/>
+    
+      <category term="邮箱消息" scheme="http://nudui.github.io/tags/%E9%82%AE%E7%AE%B1%E6%B6%88%E6%81%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文档在线预览方案</title>
+    <link href="http://nudui.github.io/2015/10/05/%E6%96%87%E6%A1%A3%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88%E6%96%B9%E6%A1%88/"/>
+    <id>http://nudui.github.io/2015/10/05/文档在线预览方案/</id>
+    <published>2015-10-05T02:33:49.000Z</published>
+    <updated>2016-11-17T14:01:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>如word文档在线预览，转换为html进行展示。</p>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><h6 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h6><p>不到万不得已不建议使用，很难转换完美。</p>
+<h6 id="七牛"><a href="#七牛" class="headerlink" title="七牛"></a>七牛</h6><ol>
+<li>七牛第三方文档转换服务，收费，但不高，api不易懂。</li>
+<li>七牛自带转换服务。参考<a href="http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接" target="_blank" rel="external">http://developer.qiniu.com/docs/v6/api/reference/fop/odconv.html。在文档url后拼接</a>  <code>?odconv/pdf</code> 。<br>缺点：此api在七牛官网无入口，可能是七牛即将弃用的服务，毕竟有了收费的第三方文档服务。</li>
+</ol>
+<h6 id="某些专做文档服务的服务商"><a href="#某些专做文档服务的服务商" class="headerlink" title="某些专做文档服务的服务商"></a>某些专做文档服务的服务商</h6><ul>
+<li>譬如idocv，其为了销售开放了试用接口<a href="http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。" target="_blank" rel="external">http://api.idocv.com/view/url?url=，幸甚使用此接口免费，正好符合需求。</a></li>
+<li>缺点：<br>  <em>1，数据（文档）安全性。   
+  </em>2，如过多调用，会引起对方警觉，可能屏蔽ip。</li>
+</ul>
+<h6 id="其他网上方案："><a href="#其他网上方案：" class="headerlink" title="其他网上方案："></a>其他网上方案：</h6><ul>
+<li><p>activexobject，此js对象仅支持ie浏览器，且需要用户在浏览器上设置诸多选项。</p>
+</li>
+<li><p>百度文库。百度要求文档必须上传到文库。</p>
+</li>
+<li><p>其他方案已忘记，要么是系统局限，要么是操作繁琐，总之弃用。</p>
+</li>
+</ul>
+<h6 id="根据2、3得到的html，可通过iframe进行展示。"><a href="#根据2、3得到的html，可通过iframe进行展示。" class="headerlink" title="根据2、3得到的html，可通过iframe进行展示。"></a>根据2、3得到的html，可通过iframe进行展示。</h6>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;效果&quot;&gt;&lt;a href=&quot;#效果&quot; class=&quot;headerlink&quot; title=&quot;效果&quot;&gt;&lt;/a&gt;效果&lt;/h3&gt;&lt;p&gt;如word文档在线预览，转换为html进行展示。&lt;/p&gt;
+&lt;h3 id=&quot;方案&quot;&gt;&lt;a href=&quot;#方案&quot; class=&quot;headerli
+    
+    </summary>
+    
+      <category term="方案" scheme="http://nudui.github.io/categories/%E6%96%B9%E6%A1%88/"/>
+    
+    
+      <category term="word在线预览" scheme="http://nudui.github.io/tags/word%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人才短租模式思考</title>
+    <link href="http://nudui.github.io/2015/09/24/%E4%BA%BA%E6%89%8D%E7%9F%AD%E7%A7%9F%E6%A8%A1%E5%BC%8F%E6%80%9D%E8%80%83/"/>
+    <id>http://nudui.github.io/2015/09/24/人才短租模式思考/</id>
+    <published>2015-09-24T07:52:28.000Z</published>
+    <updated>2016-11-16T15:26:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="想法起因"><a href="#想法起因" class="headerlink" title="想法起因"></a>想法起因</h3><ul>
+<li>企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。</li>
+<li>当下互联网盛行，人才思变，很难留职2年以上，一旦离职，个人信用值会降低，不离职，心中难受。</li>
+</ul>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>构建人才短租模式</p>
+<ol>
+<li>对于企业来说，期望人才留职3年以上，但基本不可能，且猎头费依旧高昂。短租模式根据人才租约时间制定猎头费用，企业心理承受会好一些。</li>
+<li>对于中高端人才来说，基本只有猎头+内推方式换工作。通过猎头跳槽，心理预期也就是工作一年，期满再跳，不必担心个人信誉负担。</li>
+<li>总结起来一句话：窗户纸捅破，你究竟能接受多长时间。根据时长确定薪金与猎头服务费。</li>
+</ol>
+<h3 id="产品玩法"><a href="#产品玩法" class="headerlink" title="产品玩法"></a>产品玩法</h3><ul>
+<li>依旧猎头模式。</li>
+<li>每个猎头手里有聊过的人才（能确定接受租约时长）。</li>
+<li>人才与平台签约。</li>
+</ul>
+<h3 id="问题与挑战"><a href="#问题与挑战" class="headerlink" title="问题与挑战"></a>问题与挑战</h3><ul>
+<li>通过猎头入职人才的留职时间须调研。</li>
+<li>企业与人才对此模式的认可度，或曰企业与人才对此模式的接受时长。</li>
+<li>标准的建立。毕竟有越俎代庖嫌疑。</li>
+</ul>
+<h3 id="愿景"><a href="#愿景" class="headerlink" title="愿景"></a>愿景</h3><ul>
+<li>弱化企业-员工的概念，就像uber要弱化汽车所有权的概念一样。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;想法起因&quot;&gt;&lt;a href=&quot;#想法起因&quot; class=&quot;headerlink&quot; title=&quot;想法起因&quot;&gt;&lt;/a&gt;想法起因&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;企业通过猎头招到的人，留职时间约一年（cison说，只能保障渡过试用期）。那么企业会觉不爽，体验变差。&lt;/li&gt;
+    
+    </summary>
+    
+      <category term="思考" scheme="http://nudui.github.io/categories/%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="思考" scheme="http://nudui.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>api接口规则</title>
+    <link href="http://nudui.github.io/2015/05/16/api%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    <id>http://nudui.github.io/2015/05/16/api接口规则/</id>
+    <published>2015-05-16T08:07:48.000Z</published>
+    <updated>2016-11-30T04:00:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="如想看如何防刷请求，请看【防刷】"><a href="#如想看如何防刷请求，请看【防刷】" class="headerlink" title="如想看如何防刷请求，请看【防刷】"></a>如想看如何防刷请求，请看【防刷】</h3><h3 id="header"><a href="#header" class="headerlink" title="header"></a>header</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&quot;client&quot;:&#123;</div><div class="line">    &quot;appnm&quot; : &quot;XXX&quot;, （app name）</div><div class="line">    &quot;appVer&quot; : &quot;1.0.0&quot;,    （app版本）</div><div class="line">    &quot;clientType&quot; : &quot;ios&quot;,   （系统类型）</div><div class="line">    &quot;os&quot; : &quot;iPhone OS 10.0.3&quot;,（系统版本）</div><div class="line">    &quot;model&quot; : &quot;iPhone Simulator&quot;,（手机型号）</div><div class="line">    &quot;screen&quot; : &quot;320x568&quot;,（屏幕分辨）</div><div class="line">    &quot;channel&quot; : &quot;app_store&quot;,</div><div class="line">    &quot;deviceid&quot; : &quot;E96B0235-F60C-49F4-B2F9-F1B1041C7E51&quot;（设备号）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&quot;auth&quot;:&#123;</div><div class="line">    &quot;auth&quot;: &quot;audbbiuf7q74asdh8fa0s9dqjashdugfasd&quot;,（用户唯一标识，如有则认为已登录）</div><div class="line">    &quot;sign&quot;: &quot;fad22321acbd122121&quot;,  （签名）</div><div class="line">    &quot;ts&quot; : &quot;1231231283213&quot;（时间戳）</div><div class="line">    &quot;rand&quot; : &quot;12121212&quot;（一个随机数）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="url签名"><a href="#url签名" class="headerlink" title="url签名"></a>url签名</h3><p>可随意定义，别都是MD5<br><code>sign = MD5 ( url + ts + &quot;自定义一个key&quot; + rand )</code></p>
+<p>服务端每次请求必须校验sign</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><ol>
+<li>移动端与服务端交互的每个请求，header必须加上client\auth中参数。</li>
+<li>接口服务端返回为json类型，为方便移动端，json中数据类型全部为string。</li>
+<li>如果sign不正确，服务端不处理该请求，直接返回错误码。</li>
+</ol>
+<h3 id="防刷："><a href="#防刷：" class="headerlink" title="防刷："></a><strong>防刷：</strong></h3><ul>
+<li>校验sign，hack看到有ts，可能以为每次请求更换ts即可，实则不然，sign的算法里还有个自定义的key，如此sign很难正确。</li>
+<li>如对方使用与上一次请求相同的sign，sign正确则url、ts、rand都与上一次相同。此时服务端开辟一个LRU缓存，对请求进行<strong>是否重复</strong>的判断。map.get(k)是否有值，如有，则为重复请求，返回错误码。我的k：url + ts + rand;</li>
+<li><strong>短板</strong>：在访问量超大的情况下，ts必定重复（毫秒），rd也可能重复，此时只能建议用多个rand来去重，用以保障请求的唯一性。</li>
+<li><strong>短板</strong>：且这个LRU缓存会越来越臃肿。所以，建议对不同的url，开辟不同的缓存。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;如想看如何防刷请求，请看【防刷】&quot;&gt;&lt;a href=&quot;#如想看如何防刷请求，请看【防刷】&quot; class=&quot;headerlink&quot; title=&quot;如想看如何防刷请求，请看【防刷】&quot;&gt;&lt;/a&gt;如想看如何防刷请求，请看【防刷】&lt;/h3&gt;&lt;h3 id=&quot;header&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>app会话方案</title>
+    <link href="http://nudui.github.io/2015/05/16/app%E4%BC%9A%E8%AF%9D%E6%96%B9%E6%A1%88/"/>
+    <id>http://nudui.github.io/2015/05/16/app会话方案/</id>
+    <published>2015-05-16T08:04:45.000Z</published>
+    <updated>2016-11-26T02:29:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="与web开发不同点"><a href="#与web开发不同点" class="headerlink" title="与web开发不同点"></a>与web开发不同点</h3><ul>
+<li>web中有浏览器角色，保持用户登录状态可以根据cookie、sessionid等策略来实现。</li>
+<li>而app不能（或不方便、不能自定义内容），开发者需要进行面向app的模拟session实现。</li>
+</ul>
+<hr>
+<h3 id="借助工具"><a href="#借助工具" class="headerlink" title="借助工具"></a>借助工具</h3><ul>
+<li>memcached\redis或其他进程外缓存。</li>
+</ul>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><ol>
+<li>在db中创建auth表，须包含字段：id , userid(或mobile), auth , createtime。</li>
+<li>注册时，user表中添加数据后，auth表中也添加记录，auth可自行选择加密方案。</li>
+<li>登录时：<ul>
+<li>1，user表中查找成功。</li>
+<li>2，服务端从db中获取auth，放入缓存中。</li>
+<li>3，将auth返回给移动端。</li>
+</ul>
+</li>
+<li>移动端每次请求服务端，均须将auth信息放入header中。服务端在拦截器中校验auth（先从缓存中取，如无则取db，然后放入缓存）是否正确、定位是哪个用户。</li>
+</ol>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ol>
+<li>web中默认未登录状态。移动端默认为登录状态（每次打开app只要有auth信息就默认为登录）。</li>
+<li>在缓存中，auth要设有效时长。</li>
+<li>缓存中的数据结构为  auth:userid(mobile)。</li>
+<li>当下多数app将注册与登录合二为一，使用手机号+短信验证码实现注册即登录，此时实现方案应相应作出修改，在此不述。</li>
+<li>web开发也可类似上述方案进行开发，不使用httpsession，原因不述。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;与web开发不同点&quot;&gt;&lt;a href=&quot;#与web开发不同点&quot; class=&quot;headerlink&quot; title=&quot;与web开发不同点&quot;&gt;&lt;/a&gt;与web开发不同点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;web中有浏览器角色，保持用户登录状态可以根据cookie、sessio
+    
+    </summary>
+    
+      <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
+    
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
+    
+      <category term="auth" scheme="http://nudui.github.io/tags/auth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法夕拾（09）--冒泡</title>
+    <link href="http://nudui.github.io/2014/10/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8809%EF%BC%89-%E5%86%92%E6%B3%A1/"/>
+    <id>http://nudui.github.io/2014/10/22/算法夕拾（09）-冒泡/</id>
+    <published>2014-10-21T19:04:30.000Z</published>
+    <updated>2016-11-30T13:48:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>两两比对，调整顺序，比较n-1次</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public static void sort(int[] arr) &#123;</div><div class="line">	for (int i = 1; i &lt; arr.length; i++) &#123;</div><div class="line">		for (int j = 0; j &lt; arr.length - i; j++) &#123;</div><div class="line">			if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">				int tmp = arr[j];</div><div class="line">				arr[j] = arr[j + 1];</div><div class="line">				arr[j + 1] = tmp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		System.out.println(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>时间：O(n2)</p>
+<p>空间：O(1)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;两两比对，调整顺序，比较n-1次&lt;/p&gt;
+&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
+    
+    
+      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法夕拾（08）--桶排序</title>
+    <link href="http://nudui.github.io/2014/10/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8808%EF%BC%89-%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
+    <id>http://nudui.github.io/2014/10/22/算法夕拾（08）-桶排序/</id>
+    <published>2014-10-21T18:42:11.000Z</published>
+    <updated>2016-11-30T13:48:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ol>
+<li>事先准备N个桶，每个桶代表从1到N的值。</li>
+<li>将N-1个待排序数字，按照N桶的数字进行放入。</li>
+<li>相同的桶放入了n次相同数字，则相应的桶的值为n。</li>
+<li>遍历N个桶，只要桶中的值大于0，则输出序号，值为2，则输出两次该序号。</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> *  桶排序</div><div class="line"> */</div><div class="line">public static void sort(int[] array, int range) &#123;</div><div class="line">    </div><div class="line">    // 桶</div><div class="line">    int[] bucket = new int[range];</div><div class="line"></div><div class="line">    // 遍历array，向bucket中表示</div><div class="line">    for (int i = 0; i &lt; array.length; i++) &#123;</div><div class="line">        int index = array[i];</div><div class="line">        bucket[index] = bucket[index] + 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 输出</div><div class="line">    for (int i = 0; i &lt; bucket.length; i++) &#123;</div><div class="line">        for (int j = 0; j &lt; bucket[i]; j++) &#123;</div><div class="line">            System.out.println(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>桶排序实际上只需要遍历一遍所有的元素，然后依次放入制定的位置。如果加上输出排序的时间，那么时间复杂度为O(n+m)，n：待排序的元素个数，m：桶的个数。很快，但是空间消耗比较大。</p>
+<p>元素跨度越大，空间消耗越大，空间利用率越低，浪费越大。</p>
+<p>但是  <strong><em>快</em></strong>  ！</p>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>数据分布相对均匀，跨度不太大的场景。</p>
+<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><p>利用类似散列表的方式，改善空间利用率。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;事先准备N个桶，每个桶代表从1到N的值。&lt;/li&gt;
+&lt;li&gt;将N-1个待排序数字，按照N桶的数字进行放入。&lt;/li&gt;
+&lt;li&gt;相
+    
+    </summary>
+    
+      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
+    
+    
+      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
