@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-11-26T04:25:16.000Z</updated>
+  <updated>2016-12-03T16:01:48.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh免密</title>
+    <link href="http://nudui.github.io/2016/12/04/ssh%E5%85%8D%E5%AF%86/"/>
+    <id>http://nudui.github.io/2016/12/04/ssh免密/</id>
+    <published>2016-12-03T16:00:50.000Z</published>
+    <updated>2016-12-03T16:01:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h3><ol>
+<li>将本地.ssh目录下的id_rsa.pub文件内容拷贝。</li>
+<li>远程登录，到相应的.ssh目录下，将1中内容拷贝至authorized_keys中。</li>
+</ol>
+<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><ol>
+<li>chmod 700 ~/.ssh</li>
+<li>chmod 600 ~/.ssh/authorized_keys </li>
+</ol>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>本机，ssh git@1.1.1.1</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;ssh免密登录&quot;&gt;&lt;a href=&quot;#ssh免密登录&quot; class=&quot;headerlink&quot; title=&quot;ssh免密登录&quot;&gt;&lt;/a&gt;ssh免密登录&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;将本地.ssh目录下的id_rsa.pub文件内容拷贝。&lt;/li&gt;
+&lt;li&gt;远程登录，到
+    
+    </summary>
+    
+    
+      <category term="ssh" scheme="http://nudui.github.io/tags/ssh/"/>
+    
+  </entry>
   
   <entry>
     <title>服务端开发的一些小问题</title>
@@ -48,9 +79,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
       <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
@@ -113,9 +144,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
       <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
@@ -754,9 +785,9 @@
       <category term="app-api" scheme="http://nudui.github.io/categories/app-api/"/>
     
     
-      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
-    
       <category term="api" scheme="http://nudui.github.io/tags/api/"/>
+    
+      <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
       <category term="接口规则" scheme="http://nudui.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99/"/>
     
@@ -830,43 +861,6 @@
     
       &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;两两比对，调整顺序，比较n-1次&lt;/p&gt;
 &lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（08）--桶排序</title>
-    <link href="http://nudui.github.io/2014/10/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8808%EF%BC%89-%E6%A1%B6%E6%8E%92%E5%BA%8F/"/>
-    <id>http://nudui.github.io/2014/10/22/算法夕拾（08）-桶排序/</id>
-    <published>2014-10-21T18:42:11.000Z</published>
-    <updated>2016-11-30T13:48:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ol>
-<li>事先准备N个桶，每个桶代表从1到N的值。</li>
-<li>将N-1个待排序数字，按照N桶的数字进行放入。</li>
-<li>相同的桶放入了n次相同数字，则相应的桶的值为n。</li>
-<li>遍历N个桶，只要桶中的值大于0，则输出序号，值为2，则输出两次该序号。</li>
-</ol>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> *  桶排序</div><div class="line"> */</div><div class="line">public static void sort(int[] array, int range) &#123;</div><div class="line">    </div><div class="line">    // 桶</div><div class="line">    int[] bucket = new int[range];</div><div class="line"></div><div class="line">    // 遍历array，向bucket中表示</div><div class="line">    for (int i = 0; i &lt; array.length; i++) &#123;</div><div class="line">        int index = array[i];</div><div class="line">        bucket[index] = bucket[index] + 1;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // 输出</div><div class="line">    for (int i = 0; i &lt; bucket.length; i++) &#123;</div><div class="line">        for (int j = 0; j &lt; bucket[i]; j++) &#123;</div><div class="line">            System.out.println(i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>桶排序实际上只需要遍历一遍所有的元素，然后依次放入制定的位置。如果加上输出排序的时间，那么时间复杂度为O(n+m)，n：待排序的元素个数，m：桶的个数。很快，但是空间消耗比较大。</p>
-<p>元素跨度越大，空间消耗越大，空间利用率越低，浪费越大。</p>
-<p>但是  <strong><em>快</em></strong>  ！</p>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>数据分布相对均匀，跨度不太大的场景。</p>
-<h3 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h3><p>利用类似散列表的方式，改善空间利用率。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;事先准备N个桶，每个桶代表从1到N的值。&lt;/li&gt;
-&lt;li&gt;将N-1个待排序数字，按照N桶的数字进行放入。&lt;/li&gt;
-&lt;li&gt;相
     
     </summary>
     
