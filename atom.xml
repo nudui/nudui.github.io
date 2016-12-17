@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nudui.github.io/"/>
-  <updated>2016-12-03T16:01:48.000Z</updated>
+  <updated>2016-12-17T15:35:47.000Z</updated>
   <id>http://nudui.github.io/</id>
   
   <author>
@@ -16,11 +16,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建gitlab</title>
+    <link href="http://nudui.github.io/2016/12/17/%E6%90%AD%E5%BB%BAgitlab/"/>
+    <id>http://nudui.github.io/2016/12/17/搭建gitlab/</id>
+    <published>2016-12-17T15:32:43.000Z</published>
+    <updated>2016-12-17T15:35:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="搭建gitlab"><a href="#搭建gitlab" class="headerlink" title="搭建gitlab"></a>搭建gitlab</h3><p>参见<a href="https://www.gitlab.cc/downloads/#centos6" target="_blank" rel="external">https://www.gitlab.cc/downloads/#centos6</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;搭建gitlab&quot;&gt;&lt;a href=&quot;#搭建gitlab&quot; class=&quot;headerlink&quot; title=&quot;搭建gitlab&quot;&gt;&lt;/a&gt;搭建gitlab&lt;/h3&gt;&lt;p&gt;参见&lt;a href=&quot;https://www.gitlab.cc/downloads/#ce
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://nudui.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ssh免密</title>
     <link href="http://nudui.github.io/2016/12/04/ssh%E5%85%8D%E5%AF%86/"/>
     <id>http://nudui.github.io/2016/12/04/ssh免密/</id>
     <published>2016-12-03T16:00:50.000Z</published>
-    <updated>2016-12-03T16:01:48.000Z</updated>
+    <updated>2016-12-03T16:09:56.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="ssh免密登录"><a href="#ssh免密登录" class="headerlink" title="ssh免密登录"></a>ssh免密登录</h3><ol>
 <li>将本地.ssh目录下的id_rsa.pub文件内容拷贝。</li>
@@ -31,6 +52,7 @@
 <li>chmod 600 ~/.ssh/authorized_keys </li>
 </ol>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>本机，ssh git@1.1.1.1</p>
+<h3 id="搭建git"><a href="#搭建git" class="headerlink" title="搭建git"></a>搭建git</h3><p><a href="https://segmentfault.com/a/1190000002729796#articleHeader7" target="_blank" rel="external">https://segmentfault.com/a/1190000002729796#articleHeader7</a></p>
 ]]></content>
     
     <summary type="html">
@@ -841,33 +863,6 @@
       <category term="app" scheme="http://nudui.github.io/tags/app/"/>
     
       <category term="auth" scheme="http://nudui.github.io/tags/auth/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法夕拾（09）--冒泡</title>
-    <link href="http://nudui.github.io/2014/10/22/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE%EF%BC%8809%EF%BC%89-%E5%86%92%E6%B3%A1/"/>
-    <id>http://nudui.github.io/2014/10/22/算法夕拾（09）-冒泡/</id>
-    <published>2014-10-21T19:04:30.000Z</published>
-    <updated>2016-11-30T13:48:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>两两比对，调整顺序，比较n-1次</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public static void sort(int[] arr) &#123;</div><div class="line">	for (int i = 1; i &lt; arr.length; i++) &#123;</div><div class="line">		for (int j = 0; j &lt; arr.length - i; j++) &#123;</div><div class="line">			if (arr[j] &lt; arr[j + 1]) &#123;</div><div class="line">				int tmp = arr[j];</div><div class="line">				arr[j] = arr[j + 1];</div><div class="line">				arr[j + 1] = tmp;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		System.out.println(arr[i]);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>时间：O(n2)</p>
-<p>空间：O(1)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;两两比对，调整顺序，比较n-1次&lt;/p&gt;
-&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="算法夕拾" scheme="http://nudui.github.io/categories/%E7%AE%97%E6%B3%95%E5%A4%95%E6%8B%BE/"/>
-    
-    
-      <category term="算法" scheme="http://nudui.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
